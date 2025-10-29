@@ -167,47 +167,7 @@ git revert --continue
 14. `git revert`
 
 - Creates a new commits to Undo Changes
-8. `git restore <file_name>`
 
-- The file becomes **unstaged**.
+15. `git stash`
 
-- The changes stay in your working directory
-
-- It’s just no longer part of what will be committed next
-
-9. `git branch`
-
-- List all available branches.
-
-```bash
-git branch 
-
-* master
-```
-
-10. `git branch <branch_name>`
-
-- Will create a new branch.
-
-```bash
- git branch 
-  
-feature_branch
-* master
-```
-
-11. `git checkout <branch_name>`
-
-- Will create a new brach and select as current branch.
-- You can switch between branches to create and push a files into another branch.
-
-```bash
-git checkout feature_branch 
-M       git/README.md
-Switched to branch 'feature_branch'
-
-git branch 
-* feature_branch
-  master
-```
-
+- Keep save commited or staged files as it is, and you will able to switch into another branch and can work on it.
