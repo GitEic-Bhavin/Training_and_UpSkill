@@ -150,4 +150,8 @@ git revert --continue
 ![alt text](breset.png)
 
 **After Reset**
+![alt text](areset.png)
 
+**Reset will delete that commit from history but it will kepp those changes of Revert has made**.
+
+![alt text](breset.png)
