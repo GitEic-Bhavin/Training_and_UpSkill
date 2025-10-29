@@ -129,3 +129,25 @@ hash_no HEAD@{13}: commit (initial): first commit
 - **`Run` **git push** `after git revert`.
 
 -git reset <commit-hash> moves HEAD to an older commit, removes later commits from history, but keeps the changes in your working directory (unstaged).
+
+- After revert your commits, that given commit will be **unstage** and will asking for `git add`.
+
+![alt text](revert.png)
+
+- **To continue with made changes of revert**, Run this
+
+```bash
+git revert --continue
+```
+
+![alt text](rcontinue.png)
+
+
+`git reset <last commits hash>` run after git revert
+
+**Before Reset**
+
+![alt text](breset.png)
+
+**After Reset**
+
