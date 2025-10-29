@@ -120,9 +120,12 @@ hash_no HEAD@{11}: Branch: renamed refs/heads/master to refs/heads/master
 hash_no HEAD@{13}: commit (initial): first commit
 ```
 
-11. `git revert <hash`
+11. `git revert <hash>`
 
 - git revert creates a new commit that **undoes the changes made by a previous commit**.
 - It does not delete history, unlike git reset --hard.
 - That’s why git revert is the safe way to undo a change in shared or remote repositories.
 
+- **`Run` **git push** `after git revert`.
+
+-git reset <commit-hash> moves HEAD to an older commit, removes later commits from history, but keeps the changes in your working directory (unstaged).
