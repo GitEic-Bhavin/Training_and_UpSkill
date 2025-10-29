@@ -60,6 +60,51 @@ git log
 commit b1d57ce03c18913589cc614dcb34d1949af41531 (HEAD -> master, origin/master)
 Author: GitEic-Bhavin <bhavsarbhavin16@gmail.com>
 Date:   Wed Oct 29 14:36:10 2025 +0530
-
+ 
     first commit
 ```
+
+8. `git restore <file_name>`
+
+- The file becomes **unstaged**.
+
+- The changes stay in your working directory
+
+- It’s just no longer part of what will be committed next
+
+9. `git branch`
+
+- List all available branches.
+
+```bash
+git branch 
+
+* master
+```
+
+10. `git branch <branch_name>`
+
+- Will create a new branch.
+
+```bash
+ git branch 
+  
+feature_branch
+* master
+```
+
+11. `git checkout <branch_name>`
+
+- Will create a new brach and select as current branch.
+- You can switch between branches to create and push a files into another branch.
+
+```bash
+git checkout feature_branch 
+M       git/README.md
+Switched to branch 'feature_branch'
+
+git branch 
+* feature_branch
+  master
+```
+
