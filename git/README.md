@@ -155,3 +155,16 @@ git revert --continue
 **Reset will delete that commit from history but it will kepp those changes of Revert has made**.
 
 ![alt text](breset.png)
+
+12. `git reset --soft` Bydefault `git reset`
+
+- Removes commits from history and **keep changes**.
+
+13. `git reset --hard`
+
+- Removes commits from histroy and **Removes changes**.
+
+14. `git revert`
+
+- Creates a new commits to Undo Changes
+
