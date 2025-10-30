@@ -185,8 +185,11 @@ feature branch
 ```
 
 `-E` = "Enable Regular Expressions"
+
 `v` = "Doesn't print that whatever you written in Regular Exp"/"Not print # or Blank lines"
+
 `^#` = "Line is beginnig with `#`. Will not print.
+
 `^$` = "`$` Represent the `End of the Lines`."
 
 last argument of the previous command
