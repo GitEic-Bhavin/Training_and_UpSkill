@@ -387,6 +387,55 @@ sudo fdisk n # create new partitions
 
 ![alt text](lp.png)
 
+**File Systems**
+
+- A file system in Linux defines how data is organized, stored, retrieved, and managed on a storage device (like HDD, SSD, USB, etc.).
+
+- ext = Extended file system
+- ext2, ext3, ext4 and JFS, XFS, ZFS etc are the file systems.
+
+**To create file system**
+
+```bash
+mkfs -t <file system type> <device name>
+
+mkfs -t ext4 /dev/sdb2
+
+#OR
+
+mkfs.ext4 /dev/sdb3
+```
+
+**To mount filesystem to the mount path after create file system**
+
+```bash
+mount <device name> <mount path>
+
+mount /dev/sdb3 /opt
+```
+
+**To unmount**
+
+```bash
+umount <device_name OR mount_path>
+
+umount /opt
+
+#OR
+
+umount /dev/sdb3
+```
+
+**To lablelig a file system**
+
+```bash
+sudo e2lable /dev/sdb3 <lable_name>
+
+sudo e2label /dev/xvda1
+#OutPut
+bhavin1
+```
+
 
 # WildCards make easy to matching the files
 ## filter the file for ending with .txt
