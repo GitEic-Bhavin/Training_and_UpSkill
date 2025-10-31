@@ -436,6 +436,47 @@ sudo e2label /dev/xvda1
 bhavin1
 ```
 
+**Create user**
+
+useradd [options] [username]
+
+`-c` - "Add comment for user"
+`-m` - "create home dir"
+
+```bash
+useradd -c "New user" user1 bhavin1 -m -s /bin/bash 
+
+#OutPut
+cut -d ":" -f1 /etc/passwd | grep -i user1
+user1
+```
+**Create passwd for user1**
+
+```bash
+passwd user1
+```
+
+**Delete user**
+
+```bash
+userdel <username>
+```
+
+**Update or Modify user account**
+
+`usermod [option] <username>`
+
+`-c` - "Add comments"
+`-g` - Add user in default group
+`-G` - Add user into multiple groups
+
+**Add user to new group**
+
+```bash
+sudo usermod user1 -aG testg
+```
+
+
 
 # WildCards make easy to matching the files
 ## filter the file for ending with .txt
