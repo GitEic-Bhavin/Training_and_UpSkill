@@ -184,6 +184,19 @@ grep -Ev '^#|^$`featurebranch.txt
 feature branch
 ```
 
+Search Content in a file
+---
+
+**Grep Options**
+
+| **`i`** | Ignore case |
+| ------- | ----------- |
+| **`c`** | count the no of occurences of matched content |
+| **`n`** | Print with Line numbers |
+| **`v`** | Don't print matched word |
+
+
+
 `-E` = "Enable Regular Expressions"
 
 `v` = "Doesn't print that whatever you written in Regular Exp"/"Not print # or Blank lines"
@@ -301,9 +314,79 @@ tail file.txt
 tail -10 file.txt ## Will show last 10 lines from bottom of file
 ```
 
+# Listing processes and informations
+
+ps - Display process status.
+
+`-e` - All process
+`-f` - Full Formate listing.
+`-u username` - Display username's processes.
+`-p pid` - Display info for PID.
+
+System Logging
+---
+
+- System logging refers to the process by which the operating system and its applications record important events and messages — such as *`errors`, `warnings`, `startup messages`, and `activity logs` — to help monitor, debug, and audit the system.
+
+- System logging is a centralized way to **collect**, **store**, and **manage log messages** from different parts of the system — `kernel`, `daemons`, `applications`, and `user processes`.
+
+**Using `journalctl`for systmed**
+
+```bash
+journalctl -xe       # Show recent logs with details
+journalctl -b        # Show logs since last boot
+journalctl -u nginx  # Show logs for a specific service
+```
+
+**Check system / service logs for nginx**
+
+```bash
+sudo journalctl -u nginx -xe
+```
+
 # Disk Usage
 **du -k** - Display size in kb.
 **du -h** - Display size in human readable.
+
+**Disk Partitions**
+
+- Disk can be divided into parts and each parts called `partitions`.
+
+- Partitions allow you to use and assignt that partition to your applications, seperate the data.
+
+- You can allocate one partition for OS data , another partition can allocate for Applications data, user home dir etc.
+
+**Create Partition of disk**
+
+- We have to list of all available disks and have to know which had been partitioned or not.
+
+```bash
+fdisk -l
+```
+
+![alt text](disk.png)
+
+- It is not parted.
+
+- You can make partition into this by
+
+```bash
+sudo fdisk /dev/xvda
+
+sudo fdisk -m # for help
+
+sudo fdisk n # create new partitions
+```
+
+- It will ask for partition number - choose 1
+- choose partition size is +1G
+
+![alt text](cp.png)
+
+- To see created partitions, just enter p
+
+![alt text](lp.png)
+
 
 # WildCards make easy to matching the files
 ## filter the file for ending with .txt
