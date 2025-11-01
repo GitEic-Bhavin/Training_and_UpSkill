@@ -100,3 +100,104 @@ fi
 exit 0
 ```
 
+Functions
+---
+
+**What is a functions ?**
+
+- A specific tasks you required to reuse or repeatable time in script , instead of rewrite that code , just call that functions.
+
+- Syntax: 
+  ```bash 
+  function functions-name() {
+        # Codes here
+    }
+  ```
+
+- `To call a functinos, just use function-name`
+
+```bash
+#!/bin/bash
+
+function hello() {
+    echo "Hello!"
+}
+hello
+```
+
+**Functions can call other functions**
+
+```bash
+#!/bin/bash
+
+function hello() {
+    echo "Hello!"
+
+    now # This is calling now functions into hello functinos
+}
+
+function now() {
+    echo "It's $(date +%r)"
+}
+
+hello # Now hello function is calls.
+```
+
+![alt text](f.png)
+
+**Functions can accept arguments $1, $2**
+
+```bash
+#!/bin/bash
+
+function hello() {
+    echo "Hello! $1" # pass arg as $1, BUT, YOU ALSO HAVE TO PASS IT FROM CALLING FUNCTIONS `hello $1`.
+    now
+}
+
+function now() {
+    echo "It's $(date +%r)"
+}
+
+hello $1 # HERE, YOU HAVE TO PASS ARGs, IT WILL PASS INTO Fucntions.
+```
+
+**OutPut**
+
+![alt text](fa.png)
+
+**Local Variables**
+- Can only be accessed within the functions.
+- Create using the **local** keyword.
+  
+  - `local LOCAL_VAR=1`.
+
+- Only functions can have local vars.
+
+**Global Variables**
+- Should define outside of the functions and before functions is use.
+
+- Global variables can be used within functions.
+
+- Can be redefin in functions - It will overwrites the outside defined variable's value.
+
+```bash
+
+name="bob"
+
+myfunction() {
+    name="tom"
+    echo "Hi $name! This is global variables."
+}
+myfunction
+```
+
+**OutPut**
+
+`echo "Hi $name! This is global variables."`
+
+`Hi tom! This is global variables.`
+
+
+
+
