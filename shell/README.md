@@ -387,3 +387,200 @@ debug() {
 }
 debug ls
 ```
+
+SED command
+---
+
+- Use to find and replace a word, line dering execution of sed.
+- It will not actual modify into a file.
+
+`s` - substitute of a word, line in a file
+`s/assistant` - find or match a word `assistant`
+`s/assistant/assistant to the/` <file_name> - Replace `assistant` with New word of `assistant to the`.
+
+```bash
+sed 's/assistant/assistant to the/' manager.txt 
+
+# OutPut
+Dwight is the assistant to the regional manager.
+```
+
+**Modify into a file using `-i`**
+
+```bash
+sed -i 's/assistant/assistant to the/' manager.txt 
+
+# OutPut
+einfochips@AHMLPT2650:~/Training_and_UpSkill/shell$ cat manager.txt 
+Dwight is the assistant to the regional manager.
+```
+
+**Ignore case sensitive using `i`**
+
+```bash
+sed 's/ASSItanCE/assistance/i' manager.txt
+
+# OutPut
+Dwight is the assistant to the regional manager.
+```
+
+**Modify word for all occurence usig `g`**
+
+```bash
+sed 's/ is/ IS/g' manager.txt
+```
+
+**OutPut**
+
+![alt text](sedg.png)
+
+**Modify `is` to `IS` for 2nd occurence in a line.**
+
+```bash
+sed 's/ is/ IS/2g' manager.txt 
+```
+
+**OutPut**
+
+![alt text](2g.png)
+
+`-i` - Actual modify into a file
+`i` - Ignore case sensitive.
+`g` - Match and modify that word for all multiple matches or all occurence **IN a SINGLE LINE** Only.
+`^"Special_Character"` - `^` for Matches at begining of the line.
+`$` - For matches at end of the line.
+`^$` - For matches a blank line.
+
+
+Escaping special characters in regex
+---
+
+- sed `uses` regular expressions, and in regex some characters have special meanings —
+like ., *, ?, +, [, ], (, ), ^, $, /, |, and \ itself.
+
+- If you want to `match them literally`, you must escape them with a **backslash `\`**.
+
+- Case 1
+
+```bash
+echo "1.1.1.1" | sed 's/\./-/g'
+```
+- `OutPut`
+
+```bash
+1-1-1-1
+```
+
+- Case 2
+
+`echo '/home/json' -- /export/user/json`
+
+```bash
+echo '/home/json' |  sed 's/\/home\/json/\/export\/user\/json/'
+
+# OutPut
+/export/user/json
+```
+
+- `s/` - `/` is a start point
+- `\/json/` - `json/` - `/` is a end point
+
+- You can use another option like `":"`, `"#"` to mention start and end point instead of `/`.
+
+```bash
+echo '/home/json' | sed 's:/home/json:/export/user/json:'
+
+# OutPut
+/export/user/json
+```
+
+**Delete a line which match that word**
+
+sed '/match_word/d' <file_name>
+
+```bash
+sed '/This/d' manager.txt 
+
+# OutPut
+I am assistant to my manager.
+Dwight is the assistant to the regional manager.
+```
+
+![alt text](sedd.png)
+
+**Remove blank lines, Special character or replace it with new word**
+
+`cat config`
+
+![alt text](catc.png)
+
+- Here, `DO NOT USE `s` to delete a line.
+
+```bash
+sed '/^#/d' dconfig
+```
+
+**OutPut**
+
+![alt text](rl.png)
+
+- `Replace **#** at beginning of the line.
+- `^"Special_character"` - `^` - use for Match at beginning of the line.
+- `^$` - Matches a blank line.
+
+**Remove a blank lines**
+
+```bash
+sed '/^$/d' config
+```
+**OutPut**
+
+![alt text](bl.png)
+
+Run Multiple `sed` Commands
+---
+
+- Just use `;` to seperate the multiple sed commands
+
+- 1. Remove a line which has `#` at beginning of a lines.
+- 2. delete a blank lines.
+
+```bash
+sed '/^#/d ; /^$/d/' config
+```
+
+- **Example**
+
+- 1. Create a sed script to delete a line. Execute this script.
+
+```bash
+cat script.sed
+```
+
+![alt text](cats.png)
+
+- Run this commands
+
+```bash
+sed -f <script_name> <file_name>
+
+sed -f script.sed config
+```
+
+**OutPut**
+
+![alt text](scriptsed.png)
+
+
+**Modify at specific lines only**
+
+- Use `'2 s/<MatchWor>/<NewWord>/' <file_name>`
+
+- `2` - For Line Number 2 only.
+
+```bash
+sed '2 s/apache/httpd/' config
+```
+
+![alt text](lm.png)
+
