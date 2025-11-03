@@ -201,3 +201,189 @@ myfunction
 
 
 
+Case Statements
+---
+
+- Case1
+
+```bash
+case "$1" in
+
+  start) "your command";;
+  stop) "stop command";;
+
+esac
+```
+
+- Case2
+
+```bash
+
+read -p "Enter y or n: " ANSWER
+
+case "$ANSWER" in
+    [yY] | [yY] [eE] [sS] ) echo "You answered yes.";;
+
+    [nN] | [nN] [oO] ) echo "You answered no.";;
+
+    *) echo "Invalid answer.";;
+esac
+```
+
+While Loop
+---
+
+- A while loop keeps executing again and again as long as the condition is true.
+
+- Once the condition becomes false, the loop stops immediately.
+
+```bash
+count=1
+while [ $count -le 3 ]
+do
+    echo "Count is $count"
+    ((count++))
+done
+```
+
+**OutPut**
+
+- count=1 → condition [ 1 -le 3 ] → true → runs loop → prints → count becomes 2
+
+- count=2 → condition [ 2 -le 3 ] → true → runs loop → count becomes 3
+
+- count=3 → condition [ 3 -le 3 ] → true → runs loop → count becomes 4
+
+- count=4 → condition [ 4 -le 3 ] → false → loop stops
+
+**While infinite loop**
+
+```bash
+while true # Here, not given command which make condition false.
+do
+  echo "hi"
+done
+```
+
+**While loop to checking user input**
+
+```bash
+while [ "$CORRECT" != "y" ]
+do
+  read -p "Enter your name: : NAME
+  read -p "Is ${NAME} correct ?" CORRECT
+done
+```
+**OutPut**
+
+![alt text](w1.png)
+
+**Reading file using while**
+
+```bash
+LINE_NUM=1
+
+while read LINE
+do
+    echo "${LINE_NUM}: ${LINE}"
+    ((LINE_NUM++))
+done < ../sh1.sh
+
+# LINE → variable that stores each line.
+# < ../sh1.sh - redirects the file as input to the loop.
+```
+
+
+Debugging
+---
+
+- `-x` - Prints commands and arguments as they execute
+
+- To enable debugging wirte `-x` in shebang. `#!/bin/bash -x`
+
+- set `+x` - To stop debugging.
+
+```bash
+#!/bin/bash -x
+
+TEST_VAR="test"
+echo "$TEST_VAR"
+```
+
+![alt text](set-x.png)
+
+- Set -x in script.
+
+```bash
+#!/bin/bash
+
+TEST_VAR="test"
+set -x # Enable debugging
+echo "$TEST_VAR"
+set +x # Stop  debugging
+hostname
+```
+
+![alt text](stopd.png)
+
+**Error Exit in Debugging**
+
+`-e` - Exit on Error
+`#!/bin/bash -ex` - Will enable debugging and Error exit.
+
+`-v` - Print shell input lines as they are read.
+
+```bash
+#!/bin/bash -e
+
+FILE_NAME="/not/here"
+ls "$FILE_NAME"
+```
+
+**OutPut**
+
+![alt text](xe.png)
+
+More Control over Debugging by Manual Debugging
+---
+
+- Use a Special Variables like `DEBUG` and set it value as `true` or `false`.
+
+```bash
+#!/bin/bash
+
+DEBUG=true
+
+if $DEBUG
+then
+  echo "Debug mode is ON."
+else
+  echo "Debug mode is OFF."
+fi
+```
+
+**Use AND and OR**
+
+```bash
+#!/bin/bash
+
+DEBUG=true
+$DEBUG && echo "Debug mode is ON."
+
+#!/bin/bash
+
+DEBUG=false
+$DEBUG || echo "Debug mode is OFF."
+```
+
+**Debug with Passing arguments**
+
+```bash
+#!/bin/bash
+
+debug() {
+  echo "Executing: $@"
+  $@
+}
+debug ls
+```
