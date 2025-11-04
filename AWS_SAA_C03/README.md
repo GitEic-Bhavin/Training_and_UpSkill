@@ -49,4 +49,18 @@ EC2 Instance Type
   - High performance Computing
   - Dedicated gaming servers
   - Machine learning
-  
+
+
+# Amazon EC2 Cost Optimization Options
+
+- You can use the following options to **optimize your costs** for Amazon EC2:
+
+| **Option** | **Description** |
+|-------------|-----------------|
+| **On-Demand Instances** | Pay **by the second** for the instances that you launch. |
+| **Savings Plans** | Reduce EC2 costs by committing to a **consistent amount of usage (USD/hour)** for **1 or 3 years**. |
+| **Reserved Instances** | Commit to a **specific instance configuration** (type and Region) for **1 or 3 years** to reduce costs. |
+| **Spot Instances** | Request **unused EC2 capacity** at significantly reduced prices (up to 90% off). |
+| **Dedicated Hosts** | Pay for a **physical host** dedicated to your use; bring your own software licenses to save costs. |
+| **Dedicated Instances** | Pay **by the hour** for instances running on **single-tenant hardware**. |
+| **Capacity Reservations** | **Reserve capacity** in a specific **Availability Zone** to ensure instance availability. |
