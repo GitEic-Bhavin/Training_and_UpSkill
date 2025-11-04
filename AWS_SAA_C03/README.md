@@ -124,7 +124,3 @@ It automatically launches and maintains your desired capacity at the lowest poss
 | **Use Case** | Small, flexible workloads | Large-scale or auto-scaling workloads |
 | **Cost Savings** | Up to 90% | Up to 90% with better stability |
 
----
-
-## 💡 Quick Tip
-Use **Spot Instances** for short-term or single jobs, and **Spot Fleet** when you need AWS to automatically manage and maintain capacity for bigger workloads.
