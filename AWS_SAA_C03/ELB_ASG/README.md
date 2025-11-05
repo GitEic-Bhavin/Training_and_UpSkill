@@ -59,3 +59,12 @@ Create ALB
 
 ![alt text](app2.png)
 
+**NOTE** - This backends are accessible via ALB Security Group and Instances itslelf's Security group.
+**More Secure Your Backends** - To accessible your backends via only LB URL, Just Use this LB URL into your Instance's Security Group.
+
+![alt text](ms.png)
+
+Network Load Balancer
+---
+
+- This LB is work for Receive request 
