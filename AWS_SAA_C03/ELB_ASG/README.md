@@ -20,4 +20,42 @@ Application Load Balancer
   - The true IP of the client is **inserted in the header X-Forwarded-For**.
   - We can also get Port (X-Forwarded-Port) and proto (X-Forwarded-Proto)
 
-  
+Create ALB
+---
+
+- Create 2 diff EC2.
+- Create 2 diff Target group - where your backend will run as EC2.
+
+- Create ALB > Choose Internet-Facing
+
+![alt text](albif.png)
+
+- Choose your VPC and AZs. Atleast 2 AZs are required for LB.
+
+![alt text](azs.png)
+
+- Create Security Group for your ALB Backends.
+
+- Create Listeners and Routing
+- Listeners will define your Target group have to used for which Route based , URL based applications.
+
+![alt text](listnersalb.png)
+
+- After added target group into listeners, Click on Create LB.
+
+- Wait for 2 minutes to get Provisioned this LB.
+
+- You will get LB URL to hit your backends.
+
+![alt text](lburl.png)
+
+ Just hit this URL.
+
+- App1
+
+![alt text](app1.png)
+
+- App2
+
+![alt text](app2.png)
+
