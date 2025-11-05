@@ -219,13 +219,13 @@ You can SSH or HTTP into your EC2 instance using:
 - 2. Create EIP.
 - 3. Select EIP > Go to Actions > Associate Elastic IP address
 
-![alt text](aeip.png)
+![alt text](aeip.jpg)
 
 - 4. Choose Resource type is `Instance`.
 - 5. Select EC2 instance_id.
 - 6. Choose your Instance's Private IP.
 
-![alt text](ateip.png)
+![alt text](ateip.jpg)
 
 - 7. Start the Instance.
 
@@ -537,4 +537,87 @@ To Hibernate Instance, Just select EC2 > Go to Instance state > Hibernate Instan
 ![alt text](hibconnectec2.png)
 
 - Here, You can see total uptime is **6 minutes** after restart EC2.
+
+
+
+EBS Volumes
+---
+
+- **EBS (Elastic Block Store)** = Network-based block storage for EC2 instances.
+- **Data Persistence:** Data remains intact even after EC2 instance stops or terminates (based on settings).
+- **Availability Zone Bound:** Each EBS volume is tied to a single Availability Zone (AZ).  
+  - Example: A volume in `us-east-1a` cannot attach to an instance in `us-east-1b`.
+- **Single Instance Attachment:** One EBS volume can attach to one instance at a time (at CCP level).
+- **Multiple Volumes per Instance:** You can attach multiple EBS volumes to a single EC2 instance.
+- **Provisioning:** You must predefine storage size (GB) and IOPS (performance).  
+  - AWS bills for provisioned capacity.
+- **Snapshots:** Point-in-time backups stored in S3; can be used to restore or move volumes across AZs.
+- **Delete on Termination:** Controls if volume is deleted when the instance terminates.  
+  - Root Volume → Enabled (deleted by default)  
+  - Additional Volumes → Disabled (retained by default)
+- **Acts like a “Network USB Drive”:** Attach, detach, or reattach easily without data loss.
+- **Use Cases:**  
+  - Failover setups  
+  - Persistent data storage  
+  - Backups and disaster recovery  
+  - High-performance applications
+
+EBS SnapShots
+---
+
+- Make a backup of EBS volume at a point in time.
+- Not necessary to **detach volume** to take snapshot, but **Recommened**.
+
+- You can take snapshot and create another EBS volume in diff AZs of that EBS by usig Encryptions Keys.
+
+![alt text](sanpazs.png)
+
+AMI - (Backup/Image of EC2)
+---
+
+## Concept
+- **AMI** = *Amazon Machine Image*
+- It’s the **template** that defines how your EC2 instance is built.
+- It includes OS, software, and configuration — like a “blueprint” for your server.
+
+---
+
+## 🔹 Purpose
+- They allow you to **launch identical instances** quickly with pre-installed setups.
+- **Custom AMIs** reduce **boot time** and **configuration time** since everything is pre-packaged.
+
+---
+
+## Contents of an AMI
+1. **Operating System** (e.g., Amazon Linux, Ubuntu, Windows)
+2. **Software Configuration** (e.g., web server, monitoring agent)
+3. **Application Code and Settings**
+
+---
+
+## Types of AMIs
+| Type | Description |
+|------|--------------|
+| **Public AMI** | Provided by AWS (e.g., Amazon Linux 2) |
+| **Custom AMI** | Created and maintained by you, tailored for your needs |
+| **Marketplace AMI** | Sold or shared by third-party vendors through AWS Marketplace |
+
+---
+
+## AMI Region Scope
+- AMIs are **region-specific** (e.g., `us-east-1`, `ap-south-1`).
+- You can **copy AMIs across regions** to reuse configurations globally.
+
+---
+
+## AMI Creation Process
+1. **Launch EC2 Instance** (from public or custom AMI)
+2. **Customize the Instance** (install software, configure tools, etc.)
+3. **Stop the Instance** (ensure data integrity)
+4. **Create AMI** (AWS takes EBS snapshots in the background)
+5. **Launch New EC2 Instances** from your custom AMI (same setup ready to go)
+
+- After create AMI, To create instance from that AMI, Just choose `My AMI` and choose your newly AMI.
+
+![alt text](AMI.png)
 
