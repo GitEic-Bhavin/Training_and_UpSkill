@@ -621,3 +621,94 @@ AMI - (Backup/Image of EC2)
 
 ![alt text](AMI.png)
 
+EC2 Instance Store
+---
+
+**What is EC2 Instance Store?**
+
+- An EC2 Instance Store is temporary storage that is physically attached to the EC2 host machine.
+
+- It provides high-performance, low-latency storage for data that does not need to persist after the instance stops or terminates.
+
+- Unlike EBS (Elastic Block Store), which is network-attached, Instance Store is local and temporary.
+
+- Much faster than EBS due to local disk access.
+
+- Ideal for workloads needing high-speed temporary storage.
+
+EBS Volume Types
+---
+
+| Category                     | Volume Type                    | Description                                                             |
+| ---------------------------- | ------------------------------ | ----------------------------------------------------------------------- |
+| **General Purpose SSD**      | **GP2**, **GP3**               | Balance between cost and performance for most workloads                 |
+| **Provisioned IOPS SSD**     | **IO1**, **IO2 Block Express** | High-performance storage for critical, low-latency, high-IOPS workloads |
+| **Throughput-Optimized HDD** | **ST1**                        | Low-cost HDD for frequently accessed, throughput-intensive workloads    |
+| **Cold HDD**                 | **SC1**                        | Lowest-cost HDD for infrequently accessed data (archive storage)        |
+
+
+
+## General Purpose SSD Volumes (GP2 & GP3)
+
+- These SSD volumes are ideal for a broad range of transactional workloads, including boot volumes, development/test environments, and low-latency applications.
+
+| Feature | **GP2** (Older Generation) | **GP3** (Newer Generation) |
+| :--- | :--- | :--- |
+| **Volume Size** | 1 GB – 16 TB | 1 GB – 16 TB |
+| **Baseline Performance** | **3 IOPS per GB** | **3,000 IOPS** / **125 MB/s** throughput |
+| **Scaling** | **IOPS and size are linked**. Burst up to 3,000 IOPS for small volumes. | **IOPS and throughput scale independently of size.** |
+| **Max Performance** | 16,000 IOPS (at ~5,334 GB size) | Up to **16,000 IOPS** / **1,000 MB/s** throughput |
+| **Use Cases** | General purpose, boot volumes. | Better price/performance, boot volumes, dev/test workloads. |
+
+---
+
+## Provisioned IOPS SSD Volumes (IO1 & IO2)
+
+- Designed for the most demanding, I/O-intensive, and **mission-critical business applications** (e.g., large production databases) that require sustained, high-performance, and low-latency throughput.
+
+| Feature | **IO1** | **IO2 Block Express** |
+| :--- | :--- | :--- |
+| **Size** | 4 GB – 16 TB | Up to **64 TB** |
+| **Max Provisioned IOPS** | Up to **64,000** (Nitro EC2) or 32,000 (Others) | Up to **256,000** |
+| **Latency** | Millisecond latency | **Sub-millisecond latency** |
+| **Durability** | 99.9% | **99.999%** (Higher than IO1) |
+| **Key Feature** | IOPS and storage size are **independent**. | **IOPS:GiB ratio up to 1,000:1**. Supports **EBS Multi-Attach**. |
+
+---
+
+## HDD Volumes (ST1 & SC1)
+
+- These magnetic disk volumes are optimized for workloads that prioritize **large data sets** and throughput over high IOPS, and are generally **not bootable**.
+
+| Feature | **ST1** (Throughput Optimized HDD) | **SC1** (Cold HDD) |
+| :--- | :--- | :--- |
+| **Data Access** | **Frequently accessed**, large sequential data. | **Infrequent access** (lowest-cost HDD). |
+| **Volume Size** | Up to 16 TB | Up to 16 TB |
+| **Max Throughput** | **500 MB/s** | **250 MB/s** |
+| **Max IOPS** | 500 | 250 |
+| **Use Cases** | Big Data, Data Warehousing, Log Processing. | Archival or infrequently accessed data. |
+
+
+EBS Multi-Attach - io1/io2 family
+---
+
+- We can attach the same EBS volume to Multiple EC2 *In a Same Regions**.
+
+**Use case**
+
+- Achieve **higher appilcation availability** in clustered linux apps.
+
+- **Up to 16 EC2** We can attach to Same / Single EBS Volume.
+
+![alt text](ebsma.png)
+
+
+EFS
+---
+
+- Mounting 100s of Instances across AZs.
+
+- EFS can share website files.
+- EFS is only for LINUX.
+
+![alt text](efs.png)
