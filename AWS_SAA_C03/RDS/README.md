@@ -227,3 +227,86 @@ Aurora uses a **cluster-based design**:
 | Backtrack | ❌ | ✅ |
 | Multi-AZ | Optional | Built-in |
 | Cost | Lower | ~20% higher (but more efficient) |
+
+
+# Aurora – Advanced Concepts
+
+This document covers the **advanced Aurora features** you need to understand for AWS certification exams and practical usage.
+
+## 1. Replica Auto Scaling
+
+### Concept:
+- Automatically **adds or removes Aurora Read Replicas** based on **CPU utilization or load metrics**.
+- When read traffic increases, Aurora adds more replicas automatically.
+- The **Reader Endpoint** automatically updates to include the new replicas.
+
+![alt text](auroraase.png)
+
+### Purpose:
+- Balance **read workload** dynamically.
+- Maintain consistent performance during **high read traffic**.
+
+## 2. Custom Endpoints
+
+### Concept:
+- Create **named subsets** of Aurora replicas for specific workloads.
+- Example setup:
+  - `reporting-endpoint` → connects to large instances (e.g., `db.r5.2xlarge`)
+  - `app-endpoint` → connects to smaller replicas (e.g., `db.r3.large`)
+- Reader endpoint still exists but is typically **not used** when custom endpoints are defined.
+
+![alt text](cep.png)
+
+### Purpose:
+- Route queries to the **right replica group** based on workload.
+- Improve performance for **analytics**, **reporting**, or **transactional** workloads.
+
+## 3. Aurora Serverless
+
+### Concept:
+- Fully **on-demand**, **auto-scaling** version of Aurora.
+- Database **starts, stops, and scales automatically** based on actual usage.
+- Uses a **proxy fleet** that manages database connections dynamically.
+
+![alt text](aurorasl.png)
+
+### Billing:
+- Pay **per second** of Aurora instance usage.
+
+### Purpose:
+- Ideal for **infrequent, intermittent, or unpredictable workloads**.
+- Eliminates **capacity planning** and reduces idle costs.
+
+## 4. Aurora Global Database
+
+### Concept:
+- Aurora setup across **multiple AWS regions** for **global availability** and **disaster recovery (DR)**.
+
+### Structure:
+- **1 Primary Region** → Handles all **reads/writes**.
+- **Up to 10 Secondary Regions** → **Read-only** replicas.
+- **Up to 16 Read Replicas per secondary region**.
+
+### Performance:
+- **Replication lag**: < 1 second between regions.
+- **Failover time (RTO)**: < 1 minute to promote another region.
+
+### Purpose:
+- Provide **low-latency reads** globally.
+- Enable **cross-region disaster recovery**.
+
+## 5. Aurora Machine Learning (Aurora ML)
+
+### Concept:
+- Aurora integrates directly with **AWS ML services** to run predictions via **SQL queries**.
+- Supports:
+  - **Amazon SageMaker** → use your custom ML models.
+  - **Amazon Comprehend** → for sentiment analysis and NLP.
+
+![alt text](auroraml.png)
+
+### Example:
+```sql
+SELECT ml_predict('fraud_model', transaction_data)
+FROM payments;
+```
