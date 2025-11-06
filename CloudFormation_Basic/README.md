@@ -91,6 +91,4 @@ Outputs:
 | `!Join`          | Join strings                                    |
 | `!If`, `!Equals` | Conditional logic                               |
 
-- This is cloudformation code to create single az mysql db.
-
 
