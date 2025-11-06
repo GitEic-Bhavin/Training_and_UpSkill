@@ -1,0 +1,84 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: CloudFormation template to create an RDS MySQL database instance
+
+# ─────────────────────────────
+# 1. Parameters (user input)
+# ─────────────────────────────
+Parameters:
+  DBName:
+    Type: String
+    Default: mydatabasebhavin
+    Description: Name of the RDS database to create
+
+  DBUsername:
+    Type: String
+    Default: admin
+    Description: Master username for the database
+
+  DBPassword:
+    Type: String
+    NoEcho: true
+    Description: Master password for the database (hidden in console and CLI)
+
+  DBInstanceClass:
+    Type: String
+    Default: db.t3.micro
+    Description: DB instance type (compute size)
+
+  AllocatedStorage:
+    Type: Number
+    Default: 20
+    Description: Storage (in GB) for the RDS instance
+
+# Retrive existing vpc id into var VpcId into cf
+
+  VpcId:
+    Type: AWS::EC2::VPC::Id
+    Description: Select / Retrive existing vpc id to use RDS.
+
+# ─────────────────────────────
+# 2. Resources (actual AWS components)
+# ─────────────────────────────
+Resources:
+
+  # Security group for RDS — allows MySQL inbound from your IP
+  MyRDSSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow MySQL inbound traffic
+      VpcId: !Ref VpcId # ⚠️ Replace with your VPC ID
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 3306
+          ToPort: 3306
+          CidrIp: 0.0.0.0/0 # ⚠️ For demo only — restrict to your IP in production
+
+ # The actual RDS instance
+  MyRDSInstance:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      DBName: !Ref DBName
+      Engine: mysql
+      MasterUsername: !Ref DBUsername
+      MasterUserPassword: !Ref DBPassword
+      DBInstanceClass: !Ref DBInstanceClass
+      AllocatedStorage: !Ref AllocatedStorage
+      PubliclyAccessible: true
+      VPCSecurityGroups:
+        - !Ref MyRDSSecurityGroup
+      BackupRetentionPeriod: 7
+      DeletionProtection: false
+      MultiAZ: false
+      StorageType: gp3
+
+# ─────────────────────────────
+# 3️⃣ Outputs (useful info after creation)
+# ─────────────────────────────
+Outputs:
+  RDSInstanceIdentifier:
+    Description: "RDS DB instance identifier"
+    Value: !Ref MyRDSInstance
+
+  RDSInstanceEndpoint:
+    Description: "Endpoint to connect to MySQL"
+    Value: !GetAtt MyRDSInstance.Endpoint.Address

@@ -60,5 +60,37 @@ aws cloudformation describe-stacks --stack-name MyRDSStack
 aws cloudformation delete-stack --stack-name MyRDSStack
 ```
 
+## Define parameters for vairables
+
+```yml
+Parameters:
+  DBName:
+    Type: String
+    Default: mydb
+  DBUser:
+    Type: String
+  DBPassword:
+    Type: String
+    NoEcho: true
+```
+
+## Retrive / Output a specific value of created Resource
+
+```yml
+Outputs:
+  DBEndpoint:
+    Description: "RDS Endpoint"
+    Value: !GetAtt MyDBInstance.Endpoint.Address
+```
+
+| Function         | Purpose                                         |
+| ---------------- | ----------------------------------------------- |
+| `!Ref`           | Reference a parameter or resource name          |
+| `!GetAtt`        | Get a specific attribute (e.g., endpoint of DB) |
+| `!Sub`           | Substitute variables in a string                |
+| `!Join`          | Join strings                                    |
+| `!If`, `!Equals` | Conditional logic                               |
+
+- This is cloudformation code to create single az mysql db.
 
 
