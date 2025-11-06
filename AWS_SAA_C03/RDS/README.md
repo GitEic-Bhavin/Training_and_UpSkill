@@ -310,3 +310,69 @@ This document covers the **advanced Aurora features** you need to understand for
 SELECT ml_predict('fraud_model', transaction_data)
 FROM payments;
 ```
+
+RDS Proxy
+---
+
+# Amazon RDS Proxy – Complete Overview
+
+- **Amazon RDS Proxy** acts as a **middle layer** between your **application** and your **RDS database**.
+
+- It efficiently manages database connections — think of it like a **traffic controller** that balances and reuses connections between your app and database.
+
+## Why We Use RDS Proxy
+
+### 1. Connection Pooling
+- Normally, every app request opens a **new DB connection**, which can **overload the database**.
+- RDS Proxy **reuses existing connections** instead of creating new ones.
+- This saves **CPU, memory**, and prevents **timeouts**.
+
+** Example:**
+If 1000 users hit your app → instead of 1000 DB connections,  
+**RDS Proxy might only keep 50 active** and reuse them efficiently.
+
+---
+
+### 2. Faster Failover
+- When the main database fails, RDS automatically switches to a **standby DB**.
+- Normally, this causes downtime during reconnection.
+- With RDS Proxy:
+  - The proxy automatically detects the failover.
+  - Reconnects to the new DB.
+  - Your application **doesn’t notice any downtime**.
+
+Failover becomes **up to 66% faster**.
+
+---
+
+### 3. More Secure
+- RDS Proxy **never exposes a public endpoint** — it stays **inside your VPC**.
+- Supports **IAM Authentication**, allowing access via AWS IAM users instead of static credentials.
+- **Stores DB credentials in AWS Secrets Manager**, so you never hardcode passwords.
+
+---
+
+### 4. No Code Change Needed
+You don’t need to modify your application code.
+
+Just update your connection string to use the **Proxy endpoint** instead of the **RDS endpoint**.
+
+**Example Flow:**
+`App → RDS Proxy → RDS Database`
+
+## Summary Table
+
+| Feature | Without RDS Proxy | With RDS Proxy |
+|----------|------------------|----------------|
+| Connection Handling | Each app request creates a new DB connection | Proxy reuses existing connections |
+| Failover Time | Slower reconnection during DB failover | 66% faster automatic reconnection |
+| Security | Direct DB access, hardcoded credentials | Uses IAM Auth + Secrets Manager |
+| Code Changes | Requires updates to handle failover | No app code changes needed |
+| Public Exposure | Possible if DB is public | Proxy stays private in VPC |
+
+## When to Use RDS Proxy
+Use RDS Proxy when:
+- Your app has **high concurrent connections**.
+- You use **Lambda or Fargate** (where DB connections can spike quickly).
+- You need **faster failover and higher availability**.
+- You want to **centralize connection security** using IAM and Secrets Manager.
