@@ -109,3 +109,110 @@ Not accessible from the internet.
 | **Geoproximity**       | Routes based on **location of users and resources**, and allows **biasing** (you can shift traffic manually). | When you want **control over how much traffic** each region gets, even nearby ones. | Move 20% extra traffic to Tokyo instead of Singapore        |
 | **IP-based**           | Routes based on the **client’s IP address range (CIDR)**.                                                     | When you need **custom routing for specific IPs or networks**.                      | Corporate IPs → Private API; Public IPs → Public site       |
 | **Multi-Value Answer** | Returns **multiple IPs** for one DNS query, randomly chosen.                                                  | For **basic load balancing and redundancy**.                                        | `example.com → [54.22.33.44, 54.22.33.45]`                  |
+
+
+
+
+
+# 🟢 AWS Elastic Beanstalk
+**Elastic Beanstalk (EB)** is a **Platform as a Service (PaaS)** offered by AWS.  
+It allows you to **deploy and run web applications easily** — **without managing infrastructure**.
+
+`You just upload your **application code**, and Elastic Beanstalk automatically:`
+
+- Creates **EC2 instances**
+- Sets up a **Load Balancer**
+- Configures **Auto Scaling**
+- Monitors **application health**
+- Handles **deployment and updates**
+
+`Focus on your code — not on provisioning or managing servers.`
+
+## Why It Exists
+
+Normally, developers have to:
+- Create EC2, ASG, ELB, RDS manually  
+- Configure scaling, networking, monitoring  
+- Deploy updates manually  
+
+This is **slow and error-prone**.  
+Elastic Beanstalk automates all of that using AWS services **under the hood**.
+
+## Core Components
+
+| Component | Description |
+|------------|-------------|
+| **Application** | Collection of all app versions, environments, and settings |
+| **Application Version** | One version of your uploaded app code (v1, v2, etc.) |
+| **Environment** | A running instance of your app (e.g., dev, test, prod) |
+| **Environment Tier** | - **Web Server Tier** → Handles HTTP requests<br>- **Worker Tier** → Processes background tasks via SQS |
+| **Configuration** | Settings for EC2 type, scaling, load balancer, etc. |
+
+## How It Works
+
+1. **Create Application**
+2. **Upload Application Version (your code)**
+3. **Launch an Environment (Web or Worker)**
+4. **Elastic Beanstalk automatically:**
+   - Provisions EC2, ELB, and Auto Scaling Group
+   - Deploys your code
+   - Sets up monitoring
+5. **Manage lifecycle** — update, scale, or terminate environment
+
+## Architecture Types
+
+### 1.Web Server Environment
+Handles HTTP requests through a **Load Balancer + EC2 Instances**.
+
+**How It Works:**
+
+- Traffic comes from the internet.
+
+- A Load Balancer (ELB) distributes requests to EC2 instances.
+
+- Each EC2 instance runs your web server code (e.g., Node.js, Python Flask, ASP.NET Core, etc.).
+
+- Auto Scaling adjusts instance count based on traffic.
+
+- Monitored by Beanstalk (health checks, metrics, logs).
+
+**Examples**
+
+- You build a REST API using Node.js and deploy it to Beanstalk.
+
+- Users hit api.myapp.com
+
+- ELB routes traffic to EC2s
+
+- EC2s run Node.js API code and return data from RDS or ElastiCache
+
+- Best for: Websites, REST APIs, or any app that handles HTTP/S requests
+
+### 2.Worker Environment
+Handles background jobs using **SQS + EC2 workers**.
+
+**How It Works:**
+
+- A Web Server Environment or another app sends a message to an Amazon SQS queue.
+
+- The Worker Environment continuously polls the queue for new messages.
+
+- When a message arrives, Beanstalk launches an EC2 worker to process it (e.g., send email, resize image, process data, etc.).
+
+- Scaling happens automatically based on queue length.
+
+**Best for**: Email sending, image processing, batch jobs, report generation, or data ingestion.
+
+## Supported Platforms
+
+Elastic Beanstalk supports multiple languages/frameworks:
+
+- Node.js  
+- Python  
+- Java / Tomcat  
+- .NET / .NET Core  
+- PHP  
+- Ruby  
+- Go  
+- Docker (Single or Multi-container)
+
