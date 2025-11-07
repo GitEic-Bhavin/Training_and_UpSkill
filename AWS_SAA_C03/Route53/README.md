@@ -52,3 +52,48 @@ What is DNS ?
 | **Private Hosted Zone** | - Visible **only inside your VPC**.<br>- Used for **internal/private apps**.<br>- Queries come **only from AWS resources (e.g., EC2)**. | `example.internal`   |
 
 
+![alt text](dnszonestypes.png)
+
+## 🌍 Public Hosted Zone
+
+### 🔹 Purpose
+Used to make your domain name (like `example.com`) **available to the internet**.
+
+### 🔹 How It Works
+1. A **client/browser** sends a DNS query for `example.com`.
+2. The **Public Hosted Zone** in Route 53 responds with a **public IP address** (e.g., `54.22.33.44`).
+3. The client can now access:
+   - S3 website bucket
+   - CloudFront distribution
+   - EC2 instance (with Public IP)
+   - Application Load Balancer
+
+### ✅ Key Points
+- Accessible **from anywhere on the internet**
+- Uses **Public IP addresses**
+- DNS records are **publicly visible**
+- Example domain: `example.com`
+
+## Private Hosted Zone
+
+### Purpose
+Used for **internal DNS resolution** inside your AWS **VPC**.  
+Not accessible from the internet.
+
+### How It Works
+1. EC2 or other AWS resources inside a VPC use **private DNS names**, for example:
+   - `webapp.example.internal`
+   - `api.example.internal`
+   - `db.example.internal`
+2. When an instance queries `api.example.internal`,  
+   Route 53’s **Private Hosted Zone** returns a **private IP** (e.g., `10.0.0.10`).
+3. Similarly, `db.example.internal` resolves to `10.0.0.35`.
+4. The connection happens **within the VPC** — no internet needed.
+
+### Key Points
+- Works **only inside associated VPC(s)**
+- Uses **Private IPs**
+- Not reachable from the public internet
+- Example domain: `example.internal`
+
+
