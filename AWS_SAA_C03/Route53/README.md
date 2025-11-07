@@ -56,10 +56,10 @@ What is DNS ?
 
 ## 🌍 Public Hosted Zone
 
-### 🔹 Purpose
+### Purpose
 Used to make your domain name (like `example.com`) **available to the internet**.
 
-### 🔹 How It Works
+### How It Works
 1. A **client/browser** sends a DNS query for `example.com`.
 2. The **Public Hosted Zone** in Route 53 responds with a **public IP address** (e.g., `54.22.33.44`).
 3. The client can now access:
@@ -68,7 +68,7 @@ Used to make your domain name (like `example.com`) **available to the internet**
    - EC2 instance (with Public IP)
    - Application Load Balancer
 
-### ✅ Key Points
+### Key Points
 - Accessible **from anywhere on the internet**
 - Uses **Public IP addresses**
 - DNS records are **publicly visible**
@@ -97,3 +97,15 @@ Not accessible from the internet.
 - Example domain: `example.internal`
 
 
+**AWS Route 53 Routing Policies Summary**
+
+| **Routing Policy**        | **What It Does**                                                                                              | **When to Use It**                                                                  | **Example**                                                 |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **Simple**             | Maps one domain name to **one resource (IP or load balancer)**.                                               | When you have **only one server/app** and don’t need special routing logic.         | `example.com → 54.22.33.44`                                 |
+| ⚖️ **Weighted**           | Splits traffic **based on percentage or weight** you define.                                                  | For **A/B testing**, **gradual deployments**, or load sharing.                      | 70% to `server A`, 30% to `server B`                        |
+| **Latency-based**      | Routes users to the region that gives the **lowest network latency**.                                         | When you have **same app in multiple AWS Regions** for best speed.                  | User in India → Mumbai region; User in US → Virginia region |
+| **Failover**           | Sends traffic to a **primary** resource, and if it fails, routes to **secondary (backup)**.                   | For **disaster recovery** or **high availability setups**.                          | Primary EC2 down → Redirect to backup EC2                   |
+| **Geolocation**        | Routes based on the **user’s geographic location** (continent, country, or state).                            | To show **localized content** or comply with **regional rules**.                    | US users → `us.example.com`, EU users → `eu.example.com`    |
+| **Geoproximity**       | Routes based on **location of users and resources**, and allows **biasing** (you can shift traffic manually). | When you want **control over how much traffic** each region gets, even nearby ones. | Move 20% extra traffic to Tokyo instead of Singapore        |
+| **IP-based**           | Routes based on the **client’s IP address range (CIDR)**.                                                     | When you need **custom routing for specific IPs or networks**.                      | Corporate IPs → Private API; Public IPs → Public site       |
+| **Multi-Value Answer** | Returns **multiple IPs** for one DNS query, randomly chosen.                                                  | For **basic load balancing and redundancy**.                                        | `example.com → [54.22.33.44, 54.22.33.45]`                  |
