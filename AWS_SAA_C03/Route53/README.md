@@ -216,3 +216,49 @@ Elastic Beanstalk supports multiple languages/frameworks:
 - Go  
 - Docker (Single or Multi-container)
 
+
+## Create applications by Elastic Beanstalk
+
+- Choose Env tier as `Web serveer`.
+
+- Give Applications Name.
+
+![alt text](cws.png)
+
+- Write your Env name as `Dev`.
+
+- Choose platform form which language your application will use
+
+- If you have app code then choose `upload your code` or want to create a Test Code then choose `Sample applications.`
+
+- Choose Presets as `Single instance`.
+
+![alt text](preset.png)
+
+- Create Role for Elastic Beanstalk > Select AWS Service > Use case is `Elastic Beanstalk - Env` and Service is `Elastic Beanstalk`.
+
+![alt text](roleeb.png)
+
+- Two diff Roles for Elastic Beanstalk , Create it.
+
+![alt text](trole.png)
+
+- Give role name and create Service Role.
+
+![alt text](nr.png)
+
+- Create Instance Profile for EC2 can use Elastic Beanstalk.
+
+![alt text](computr.png)
+
+- Select all permissions.
+
+![alt text](sap.png)
+
+- Click on `Skip to Review` and create it.
+
+- ![alt text](createapp.png)
+
+- App is running well
+
+![alt text](appr.png)
