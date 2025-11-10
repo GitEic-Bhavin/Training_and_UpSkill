@@ -219,4 +219,4 @@ Think of it as a **smart “event router”** that listens for *events* (like �
 3. **EventBridge** sends message to **SNS topic**  
 4. **SNS** emails you the alert  
 
-Instant security alert without manual checks!
+Instant security alert without manual checks! 
