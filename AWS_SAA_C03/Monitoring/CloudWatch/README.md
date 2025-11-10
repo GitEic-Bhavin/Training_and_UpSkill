@@ -220,3 +220,38 @@ Think of it as a **smart “event router”** that listens for *events* (like �
 4. **SNS** emails you the alert  
 
 Instant security alert without manual checks! 
+
+
+Create EventBridge for Change Instance Status
+---
+
+- Create Event Rule & Choose Rule type is event patterns.
+
+![alt text](ertp.png)
+
+- Choose Event Source as `AWS Event or EventBridge`.
+
+![alt text](es.png)
+
+- Choose Event Pattern as `Use Pattern form`.
+
+- Event Shorce - AWS Service > EC2.
+
+- Event Type - `EC2 Instance state-change notifications`.
+
+![alt text](ept.png)
+
+- Choose Event Type - `Specific state` - [Terminating, Running].
+
+- Event Type - `Any Instances or Specific Instances`.
+
+- Choose Target as SNS
+
+![alt text](ebtgt.png)
+
+- Create SNS Topic and choose it as target.
+
+- Review & Create.
+
+- Try to Create New Instance. It will Notify on SMS.
+
