@@ -39,21 +39,6 @@ Get SQS msg and AutoScale EC2.
 
 4. Make code for create random msg and send to SQS.
 
-```py
-import boto3, json, random, time
-sqs = boto3.client('sqs')
-QUEUE_URL = "Your_SQS_URL"
-
-def lambda_handler(event, context):
-    job = {
-        "job_id": random.randint(1000, 9999),
-        "timestamp": int(time.time()),
-        "action": random.choice(["resize-image", "generate-report", "process-data"])
-    }
-    sqs.send_message(QueueUrl=QUEUE_URL, MessageBody=json.dumps(job))
-    return {"status": "sent", "job": job}
-```
-
 5. To Execute this script every minute by Lambda
 
   - In the Lambda console, click Add trigger.
