@@ -23,6 +23,8 @@ to trigger automation (e.g., Lambda or custom scripts).
 Get SQS msg and AutoScale EC2.
 ---
 
+![alt text](diagram.png)
+
 1. Create SQS
 
 ![alt text](sqs.png)
@@ -97,5 +99,3 @@ def lambda_handler(event, context):
 14. Created CW Alerts.
 
   - ![alt text](cwalerts.png)
-
-![alt text](diagram.png)
