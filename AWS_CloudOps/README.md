@@ -37,9 +37,7 @@ Get SQS msg and AutoScale EC2.
 
 ![alt text](clambda.png)
 
-4. Make code for create random msg and send to SQS.
-
-5. To Execute this script every minute by Lambda
+4. To Execute this lambda every minute by Lambda
 
   - In the Lambda console, click Add trigger.
 
@@ -55,32 +53,32 @@ Get SQS msg and AutoScale EC2.
 
   - ![alt text](addexp.png)
 
-6. Test your lambda code to send msg to sqs
+5. Test your lambda code to send msg to sqs
 
 ![alt text](vsqs.png)
 
-7. Create ASG and create Scale out and Scale in policy
+6. Create ASG and create Scale out and Scale in policy
 
-8. Create CloudWatch Alarm.
+7. Create CloudWatch Alarm.
 
   - Choose SQS > Queue Metrics for metrics
 
   - ![alt text](sqsm.png)
 
-9. Choose below metrics
+8. Choose below metrics
 
   - ![alt text](metric.png)
 
-10. Set treshold for >= 300 msg for Max.
+9. Set treshold for >= 300 msg for Max.
 
-11. Add ASG Actions
+10. Add ASG Actions
 
-12. Choose your ASG and Choose which policy will apply for this metrics.
+11. Choose your ASG and Choose which policy will apply for this metrics.
 
 ![alt text](asgactions.png)
 
-13. Same do for Scale in policy
+12. Same do for Scale in policy
 
-14. Created CW Alerts.
+13. Created CW Alerts.
 
   - ![alt text](cwalerts.png)
