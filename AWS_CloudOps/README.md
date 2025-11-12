@@ -263,3 +263,57 @@ VPC Interface EndPoints
 ![alt text](vpciep.png)
 
 
+AWS Disaster Recovery
+---
+
+**1. AWS DataSync**
+
+- Move large amount of data `to` and `from` :
+  
+  - On-premises/other cloud to AWS. **Agent is required**..
+  - AWS to AWS (diff storage services) - `No agent required`.
+
+  - Can Synchronize to:
+    - Amazon S3(including Galciers)
+    - Amazon EFS
+    - Amazon FSx(Windows, Luster, NetApp, OpenZFS)
+
+  - You can schedule backup for hourly, daily, weekly.
+
+  - `DataSync` will kepp your **File Permissions** and **Metadata preserved**.
+
+  - One Agent task can use 10 Gbps, 
+
+## AWS DataSync NFS/SMB protocol to AWS S3, EFS, FSx
+
+- You have On-premise server of SMB/NSF protocol.
+
+- You have to install **AWS DataSync Agent** in your On-premises server
+
+- After that you will be able to connect your on-premise server to AWS DataSync service for backup.
+
+
+**NOTE**: `You want to Take backup of your On-premise server into AWS storage options vis **DataSync service** but you dont have a capacity for it to store data.
+
+**You can use `AWS Snowcone` service which will have Pre-installed DataSync Agent. You can ship to Amazon after taking backup.**
+
+![alt text](onpremisebackup.png)
+
+**2. AWS Backup**
+
+- It is centrally manage and automate backup across AWS Services.
+
+- It will take backup from:
+
+  - Amazon EC2 / EBS
+  - Amazon S3
+  - Amazon RDS / Aurora / DynamoDB
+  - Amazon EFS / FSx
+  - AWS Storage Gateway
+
+- It supports `cross-regions` backup.
+
+- Also supports `cross-account` backup.
+
+- You can create backup for specific resource tags.
+
