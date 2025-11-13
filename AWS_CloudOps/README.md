@@ -390,3 +390,88 @@ EventBridge - Cross-Account
 
 - Account 2 is also required a Policy to Recevie and Put event from account 1.
 
+
+
+Cross-Account VPC Peering
+---
+
+- Create VPC Peering
+
+- Choose Your VPC ID
+- Select Another Account - Enter User B Account ID.
+
+- Send VPC Peering Request
+
+![alt text](vpcpr.png)
+
+- User B will Accept the request.
+
+- Add Route Table to Use User B VPC id and Peering Connection ID.
+
+![alt text](editrtpcid.png)
+
+- Add Pub SG for allow inbound traffic from User B Account
+
+![alt text](addpubsg.png)
+
+- Allow traffic from Pub Subnet to Private Subnets only.
+
+![alt text](addprvsub.png)
+
+- Modify Route table, SG same way for Account B user.
+
+- SSH into My Account's Public EC2
+
+![alt text](sshp.png)
+
+- Try to Ping and SSH into User B Public EC2
+
+![alt text](pssh.png)
+
+- Try to Ping and SSH into User B Private EC2
+
+![alt text](psshpvt.png)
+
+
+
+
+
+EventBridge Cross Account
+---
+
+- Go to Event Bus - Add resoruce policy to Allow to Account B can put their events into My Account A.
+
+
+![alt text](acbeb.png)
+
+- Go to Account A and Define EventBridge Rule for EC2 for Status: running
+- Assign Resource Policy to EventBridge for Put Event from Account A to Account B by using ARN of EventBridge Default Bus of Account B.
+
+
+
+
+- Go to Account B > Create Role for SSM and give permissions.
+
+![alt text](ssmrole.png)
+
+- Create SSM Doc To install nginx
+
+![alt text](ssmtemp.png)
+
+- Create EventBridge Rule in Account B.
+- To Trigger SSM Automation in Account A - Choose Target As Account A.
+
+```yml
+{
+  
+  "source": ["aws.ec2"],
+  "account": ["490909520477"],
+  "detail-type": ["EC2 Instance State-change Notification"],
+  "detail": { "state": ["running"] }
+}
+```
+
+- Choose target as SSM and Give ARN of SSM Role
+
+![alt text](targeteb.png)
+
