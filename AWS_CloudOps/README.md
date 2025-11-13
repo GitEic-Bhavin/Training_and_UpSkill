@@ -317,3 +317,76 @@ AWS Disaster Recovery
 
 - You can create backup for specific resource tags.
 
+EventBridge Context Filter
+---
+
+1. Create S
+
+
+
+EventBridge - Pipe
+---
+
+- you can pull all events from variations of sources to Targeted destinations services.
+
+
+![alt text](EBPipe.png)
+
+
+- By EventBridge - Pipe you can fileter for a specific event let you pass to dest services  and also let you Enrichment (Let you transform event into data type formate you need).
+
+- For Enrichment that event into data type formate you can use other services like:
+
+  - Lamdba,
+  - Step Functions,
+  - API Gateway,
+  - EventBridge API Destinations.
+
+- Once this all event has been filetered and processed , you can send it to Target Services.
+
+- We will not required to write the code to send to Target.
+
+
+EventBridge - Retries & DLQs
+---
+
+- Sometimes events can't be delivered to a Target due to:
+
+  - Target not being available
+  - Network Issues
+
+- You can define a **Retry Policy** by configuring:
+
+  - Length of Time (defult: 24hr)
+  - Retry Attempts (default: 185)
+
+- By defining **Retry Policy** it will retry atleast 185 times in 24 hr and send to dest services.
+
+- During this, you can send Undelivered events to **Dead Letter Queue (DLQ)** using SQS for later processing.
+
+![alt text](dlqs.png)
+
+EventBridge - Trigger SSM Automations
+---
+
+- You can specify SSM Automations as a target of EventBridge event
+
+![alt text](ssmeb.png)
+
+- You can schedule or When a specific event occurs you can trigger EventBridge for same.
+
+EventBridge - Cross-Account
+---
+
+- You have EventBridge as a Target
+
+- You have 2 diff aws account.
+
+- You want to Send an event from one account to another account's EventBridge event-bus.
+
+![alt text](caeb.png)
+
+- You will required a Resource-based policy to allow Accont 1 to Putevents in another Account. 
+
+- Account 2 is also required a Policy to Recevie and Put event from account 1.
+
