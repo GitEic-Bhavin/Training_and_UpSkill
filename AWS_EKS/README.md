@@ -138,7 +138,7 @@ eksctl get nodes
 
 ```bash
 eksctl utils associate-iam-oidc-provider \
-    --region -ap-south-1 \
+    --region ap-south-1 \
     --cluster EksCluster-Bhavin
 ```
 
@@ -190,3 +190,101 @@ eksctl get nodes -o wide
 ## Verify Security Group Associated to Worker Nodes
 
   - Go to EC2 > Choose Worker Nodes > SG.
+
+
+
+**Create a Pod**
+
+```bash
+kubectl run my-first-pod --image nginx # >=v1.18
+
+# OR
+
+kubeclt run my-first-pod --image nginx --generated=run-pod/v1 # for <v1.18
+```
+
+**Ports**
+
+  - **port** - Port on which node port service listens in k8s clusters.
+  - **targetPort** - We define container port here on which our apps is running.
+  - **NodePort** - Worker node port on which we an access our apps.
+
+1. Imperative Approach (Using Direct Commands)
+
+  - Create a Pod
+
+  ```bash
+  kubectl run my-first-pod --image nginx
+  ```
+
+  - Expose Pod as a Service
+  ```bash
+  kubectl expose pod my-first-pod --type=NodePort --port=80 --name=my-nginx-service
+  ```
+
+  - Get Service Info
+  ```bash
+  kubectl get service or svc
+
+  - Get Public IP of worker nodes
+  ```bash
+  kubectl get nodes -o wide
+  ```
+
+![alt text](gs.png)
+
+**Access the Apps using Public IP**
+
+```bash
+http://<node1-public-ip>:<Node_Port>
+```
+
+
+## Varify Pod Logs
+
+```bash
+# Get Pod Logs
+kubectl logs my-first-pod
+
+kubctl logs -f my-first-pod
+```
+
+![alt text](plog.png)
+
+## Connec to container in a POD
+
+```bash
+kubectl exec -it <pod_name> --/bin/bash
+
+kubectl exec -it my-first-pod --/bin/bash
+
+# You can run commands inside this pod
+
+ls
+exit
+
+# Run command inside container \
+kubectl exec -it <pod_name> <command>
+
+kubectl exec -it my-first-pod ls
+```
+
+![alt text](exec.png)
+
+## Get YAML Output of Pod & Service
+
+**Get YAML OutPut**
+
+```bash
+kubectl get pod <pod_name> -o yaml
+
+kubectl get my-first-pod -o yaml
+
+# Get Service def yaml output
+
+kubectl get service my-first-service -o yaml
+```
+
+![alt text](rs.png)
+
+

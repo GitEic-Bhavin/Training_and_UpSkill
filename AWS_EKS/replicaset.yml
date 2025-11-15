@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-replicaset
+  labels:
+    app: nginx-replicas
+spec:
+  template:
+    metadata:
+      labels:
+        app: nginx-app
+    spec:
+      containers:
+        - name: my-nginx-c
+          image: nginx:latest
+  replicas: 2
+  selector:  # Only for labled "app: nginx-app" matches to any of pods.
+    matchLabels:
+      app: nginx-app 
