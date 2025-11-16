@@ -148,4 +148,114 @@ No need to manually create PV.
 
 ![alt text](ebspodns.png)
 
+## 2. Create EBS Storage PV PVC ConfigMap StorageClass
+
+## 2.1 Create ConfigMap
+
+- While MySql Pod is created, Automatically a define Schemas will also created in MySQL.
+
+- It will done by using ConfigMap.
+
+- Create ConfigMap for create Schemas in MySQL Pod.
+
+```yml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myconfigmap
+  labels:
+    app: myapplication
+data:
+  # my-key: my-value
+  mysql_usermgmt.sql: |-
+    DROP DATABASE IF EXISTS usermgmt;
+    CREATE DATABASE usermgmt;
+```
+
+## 2.2 Create StorageClass
+
+- Create StorageClass for Dynamic create EBS Volume and Bound it.
+
+```yml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadate:
+  name: ebs-sc
+
+provisioner: ebs.csi.aws.com
+volumeBindingMode: WaitForFirstConsumer
+```
+
+## 2.4 Create PVC
+
+```yml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ebs-mysql-pvc
+spec:
+  resources:
+    requests:
+      storage: 4Gi
+  accessModes:
+    - ReadWriteOnce
+    # storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
+  storageClassName: ebs-sc
+```
+
+- Create PVC, StorageClass and ConfigMap
+
+```bash
+kubectl apply -f kube-manifests
+```
+
+![alt text](pvcsccm.png)
+
+**NOTE**- Here, You can see pvc named `myconfigmap` is still in `pending` state and waiting for schedule any of pod which will want to use PV of EBS with Access request for 4Gi.
+
+## 2.3 Create MySQL Deployment to use PVC
+
+## 3. Create ClusterIP Healdess Service
+
+```yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service-ci
+spec:
+  selector:
+    app: myapp
+  type:  ClusterIP
+  ports:
+  - name: mysql-port
+    port:  3306
+  clusterIP: None # For Headless services to talk with Pods by its DNS.
+```
+
+### 3.1 Create deployment
+
+### 3.2 Varify PVC is Mounted
+
+- After created Deployment for MySQL Pod replicas: 1 , It should mount with PVC.
+
+![alt text](mounted.png)
+
+### 3.3 Connect to MySQL DB.
+
+```bash
+kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client-final -- mysql -h mysql-service-ci -u root -p
+```
+
+![alt text](connected.png)
+
+
+- Varify Database `usermgmt` is created
+
+```bash
+show schemas;
+
+quit
+```
+
+![alt text](dbcd.png)
 

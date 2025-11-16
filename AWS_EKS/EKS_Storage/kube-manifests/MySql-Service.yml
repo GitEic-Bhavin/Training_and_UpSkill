@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service-ci
+spec:
+  selector:
+    app: myapp
+  type:  ClusterIP
+  ports:
+  - name: mysql-port
+    port:  3306
+  clusterIP: None # For Headless services to talk with Pods by its DNS.
