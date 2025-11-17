@@ -225,7 +225,292 @@ kubectl -n kube-system logs -f  aws-load-balancer-controller-78785b5df6-6km6m
 
 # Review logs for AWS LB Controller POD-2
 kubectl -n kube-system logs -f <POD-NAME> 
-kubectl -n kube-system logs -f aws-load-balancer-controller-86b598cbd6-vqqsk
+kutlscerdecodebectl -n kube-system logs -f aws-load-balancer-controller-86b598cbd6-vqqsk
 ```
 
+### 7.3 Verify AWS Load Balancer Controller k8s Service Account - Internals
 
+```bash
+# List Service Account and its secret
+kubectl -n kube-system get sa aws-load-balancer-controller
+kubectl -n kube-system get sa aws-load-balancer-controller -o yaml
+
+kubectl get secrets -n kube-system aws-load-balancer-tls -o yaml
+```
+
+- Decode tls.key into base64.
+
+![alt text](.png)
+
+- Copy this decoded value and paste it into certdecoder to match it.
+
+![alt text](certdecoder.png)
+
+```bash
+kubectl -n kube-system get secret <GET_FROM_PREVIOUS_COMMAND - secrets.name> -o yaml
+kubectl -n kube-system get secret aws-load-balancer-controller-token-5w8th 
+kubectl -n kube-system get secret aws-load-balancer-controller-token-5w8th -o yaml
+```
+
+## Decoce ca.crt using below two websites
+https://www.base64decode.org/
+https://www.sslchecker.com/certdecoder
+
+## Decode token using below two websites
+https://www.base64decode.org/
+https://jwt.io/
+Observation:
+
+
+
+1. Review decoded JWT Token
+
+# List Deployment in YAML format
+```bash
+kubectl -n kube-system get deploy aws-load-balancer-controller -o yaml
+```
+
+Observation:
+1. Verify "spec.template.spec.serviceAccount" and "spec.template.spec.serviceAccountName" in "aws-load-balancer-controller" Deployment
+2. We should find the Service Account Name as "aws-load-balancer-controller"
+
+# List Pods in YAML format
+```bash
+kubectl -n kube-system get pods
+kubectl -n kube-system get pod <AWS-Load-Balancer-Controller-POD-NAME> -o yaml
+kubectl -n kube-system get pod aws-load-balancer-controller-65b4f64d6c-h2vh4 -o yaml
+```
+
+Observation:
+1. Verify "spec.serviceAccount" and "spec.serviceAccountName"
+2. We should find the Service Account Name as "aws-load-balancer-controller"
+3. Verify "spec.volumes". You should find something as below, which is a temporary credentials to access AWS Services
+CHECK-1: Verify "spec.volumes.name = aws-iam-token"
+  - name: aws-iam-token
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          audience: sts.amazonaws.com
+          expirationSeconds: 86400
+          path: token
+CHECK-2: Verify Volume Mounts
+    volumeMounts:
+    - mountPath: /var/run/secrets/eks.amazonaws.com/serviceaccount
+      name: aws-iam-token
+      readOnly: true          
+CHECK-3: Verify ENVs whose path name is "token"
+    - name: AWS_WEB_IDENTITY_TOKEN_FILE
+      value: /var/run/secrets/eks.amazonaws.com/serviceaccount/token          
+
+
+
+Ingress Controller
+---
+
+Below is a **beginner-friendly, clean, production-ready README** explaining the **difference between Ingress for EKS vs Ingress for Kubeadm**.
+
+You can directly copy-paste this into your project or documentation.
+
+
+# **README: Difference Between Ingress YAML for EKS and Kubeadm**
+
+## Overview
+
+Kubernetes supports multiple Ingress Controllers.
+Depending on where your cluster is running, the **Ingress YAML configuration changes**.
+
+This README explains the **key differences** between:
+
+* **Ingress for kubeadm (on-prem / VM / bare-metal)**
+* **Ingress for Amazon EKS (AWS cloud)**
+
+
+# 1. Ingress in Kubeadm (Bare-Metal / On-Prem)
+
+### Uses: **NGINX Ingress Controller**
+
+In kubeadm-based clusters, the most common Ingress Controller is **NGINX**.
+
+### YAML Characteristics
+
+* Uses the **NGINX ingress class**
+* Does **not** create any cloud load balancer
+* Routes traffic through an NGINX Pod inside the cluster
+* NGINX-specific annotations
+
+### Example (kubeadm ingress.yaml)
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: nginx
+spec:
+  controller: k8s.io/ingress-nginx
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-app-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: my-app-service
+                port:
+                  number: 80
+```
+
+### Request Flow (kubeadm)
+
+```
+Client → NGINX Ingress Pod → Service → Pods
+```
+
+### Use Case
+
+* Local/minikube
+* On-prem data centers
+* Bare-metal servers
+* kubeadm clusters on VMs
+
+
+# 2. Ingress in Amazon EKS (AWS Cloud)
+
+### Uses: **AWS Load Balancer Controller (ALB)**
+
+EKS does NOT use NGINX by default.
+Instead, it integrates with AWS and creates an **Application Load Balancer (ALB)**.
+
+### YAML Characteristics
+
+* Uses AWS **ALB ingress class**
+* Creates an **AWS Application Load Balancer**
+* Requires AWS-specific annotations
+* Targets Pods directly via AWS Target Groups
+
+### Example (EKS ingress.yaml)
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: alb
+spec:
+  controller: ingress.k8s.aws/alb
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-app-ingress
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: my-app-service
+                port:
+                  number: 80
+```
+
+### Request Flow (EKS)
+
+```
+Client → AWS Application Load Balancer → Target Group → Pods
+```
+
+### Use Case
+
+* Amazon EKS clusters
+* Need managed AWS load balancers (ALB)
+* Internet-facing or internal L7 load balancing
+
+
+# 3. Side-By-Side Comparison
+
+| Feature                    | kubeadm (NGINX)        | EKS (AWS ALB)                  |
+| -------------------------- | ---------------------- | ------------------------------ |
+| Ingress Controller         | NGINX                  | AWS Load Balancer Controller   |
+| IngressClass               | `k8s.io/ingress-nginx` | `ingress.k8s.aws/alb`          |
+| Creates AWS Load Balancer? | ❌ No                   | ✔️ Yes (ALB)                   |
+| Traffic Routing            | NGINX reverse proxy    | AWS ALB → Target Groups → Pods |
+| Annotations                | NGINX-specific         | AWS ALB-specific               |
+| Works On                   | Local/kubeadm/on-prem  | Amazon EKS                     |
+
+
+# 4. When to Use Which?
+
+### Use **kubeadm NGINX Ingress** if:
+
+* You run Kubernetes on **VMs, bare-metal, local**, or **on-prem**
+* You don’t need AWS cloud features
+* You prefer running your own ingress controller
+
+### Use **EKS ALB Ingress** if:
+
+* Your cluster is in **Amazon EKS**
+* You want AWS-managed load balancers
+* You need WAF, SSL (ACM certs), HTTP/HTTPS listeners, auto-scaling ALB
+* You want traffic to directly reach Pods via AWS Target Groups
+
+
+# Summary
+
+| kubeadm                | EKS                      |
+| ---------------------- | ------------------------ |
+| Uses NGINX Ingress     | Uses AWS ALB Ingress     |
+| Works locally/on-prem  | Works only in AWS EKS    |
+| No cloud load balancer | Creates AWS ALB          |
+| Simple annotations     | AWS-specific annotations |
+| Traffic via NGINX pod  | Traffic via AWS ALB      |
+
+
+EKS Ingress Class & Ingress Resource
+---
+
+![alt text](ingcsrs.png)
+
+
+# Review IngressClass Kubernetes Manifest & Install LB Controller via manifests
+
+```yml
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: my-aws-ingress-class
+  annotations:
+    ingressclass.kubernetes.io/is-default-class: "true"
+spec:
+  controller: ingress.k8s.aws/alb
+
+## Additional Note
+# 1. You can mark a particular IngressClass as the default for your cluster. 
+# 2. Setting the ingressclass.kubernetes.io/is-default-class annotation to true on an IngressClass resource will ensure that new Ingresses without an spec.ingressClassName field specified will be assigned this default IngressClass.  
+# 3. Reference: https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.3/guide/ingress/ingress_class/
+```
+
+- To install AWS Load Balancer Controller:
+```bash
+kubectl apply -f ingress_class.yml
+
+kubectl describe ingressclass my-aws-ingress-class
+```
+
+![alt text](desic.png)
