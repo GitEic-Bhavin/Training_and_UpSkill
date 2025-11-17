@@ -27,7 +27,7 @@ eksctl create nodegroup --cluster=EksCluster-Bhavin \
     --external-dns-access \ 
     --full-ecr-access \
     --appmesh-access \
-    --alb-ingress-access
+    --alb-ingress-access \
     --node-private-networking # This will make worker node in private subnets.
 ```
 
