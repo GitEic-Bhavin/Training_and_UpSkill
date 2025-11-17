@@ -118,8 +118,9 @@ A properly designed VPC is critical for EKS.
 # Create EKS Cluster 
 
 ```bash
-eksctl create cluster --name=EksCluster_Bhavin \
-                    --region=ap-south-1a,ap-south-1b \
+eksctl create cluster --name=EksCluster-Bhavin \
+                    --zones=ap-south-1a,ap-south-1b \
+                    --region=ap-south-1 \
                     --without-nodegroup
 ```
 
