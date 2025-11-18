@@ -18,7 +18,8 @@ eksctl create cluster --name=EksCluster-Bhavin \
 ```yml
 eksctl utils associate-iam-oidc-provider \
     --region ap-south-1 \
-    --cluster EksCluster-Bhavin
+    --cluster EksCluster-Bhavin \
+    --approve
 ```
 
 ## 3. Create Node Group (worker nodes) with additional Add-Ons in Public Subnets
