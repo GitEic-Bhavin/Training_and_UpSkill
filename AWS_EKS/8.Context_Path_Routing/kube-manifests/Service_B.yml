@@ -12,6 +12,6 @@ spec:
     app: app2-nginx
   type: NodePort
   ports:
-  - name: nginx-port
+  - name: nginx-port2
     port:  80
     targetPort:  80
