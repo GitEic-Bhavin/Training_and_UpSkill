@@ -1,0 +1,45 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-nginxapp1
+  labels:
+    app: app1-nginx
+  annotations:          # Define your Load balancer Settings here.
+  # Give ALB Load Balancer Name
+    alb.ingress.kubernetes.io/load-balancer-name: my-app1-defaultbackend-lb
+
+  # Give ALB Types: Internal or internet-facing (public)
+    alb.ingress.kubernetes.io/scheme: internet-facing
+  # Check health-check for our ALB
+    alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
+  # alb.ingress.kubernetes.io/healthcheck-port specifies the port used when performing health check on targets.
+    alb.ingress.kubernetes.io/healthcheck-port: traffic-port    
+# traffic-port: This is the port number that the Target Group uses to send incoming application traffic to the targets. 
+# Since we are using a NodePort service, the traffic-port must be set to the NodePort (e.g., 31234).
+# healthcheck-port: traffic-port: By setting the health check port to traffic-port, you are telling the ALB: "The port I use for sending live traffic (the NodePort) is the exact same port that you should use to check the health of the target."
+
+# Check health check on path of app1.
+    alb.ingress.kubernetes.io/healthcheck-path: /app1/index.html
+
+# Check for health check of interval for 10s.
+    alb.ingress.kubernetes.io/healthcheck-interval-seconds: '10'
+
+# Health-check will fail if no respons within 8s.
+    alb.ingress.kubernetes.io/healthcheck-timeout-seconds: '8'
+
+# status code that should be expected when doing health checks against the specified health check path.
+    alb.ingress.kubernetes.io/success-codes: '200'
+
+# Check for health-check atleast 2 times before considering into UNHEALTHY
+    alb.ingress.kubernetes.io/healthy-threshold-count: '2'
+
+    alb.ingress.kubernetes.io/unhealthy-threshold-count: '2'
+
+
+spec:
+  ingressClassName: my-aws-ingress-class
+  defaultBackend:
+    service:
+      name: app1-nginx-nodeport-service
+      port: 
+        number: 80
