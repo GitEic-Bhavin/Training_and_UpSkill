@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app2-nginx-nodeport-service
+  labels:
+    app: app2-nginx
+# NOTES: We will require to add health-check path in annotation in this service if we are planning to deploy multiple applications targets like app1/index.html, app2/index.html using Load Balancer Controller Ingress.
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: /app2/index.html
+spec:
+  selector:
+    app: app2-nginx
+  type: NodePort
+  ports:
+  - name: nginx-port
+    port:  80
+    targetPort:  80
