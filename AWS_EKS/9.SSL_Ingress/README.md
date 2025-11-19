@@ -59,6 +59,8 @@ kubectl get deployments,pods,svc
     - Choose your Certificates created in AWS Certificate Manager > create records in route53.
     - Choose domains & create.
 
+8. Create DNS Record Name to use it instead of Load Balancer URL.
+
 8. Update SSL Cert in Ingress
 
 ```yml
@@ -71,3 +73,12 @@ kubectl get deployments,pods,svc
 kubectl apply -f kube-manifests/
 ```
 
+10. Browse you DNS Records
+
+- App1
+
+![alt text](app1.png)
+
+- App2
+
+![alt text](app3.png)
