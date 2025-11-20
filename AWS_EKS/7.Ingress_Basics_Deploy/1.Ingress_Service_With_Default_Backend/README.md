@@ -49,7 +49,7 @@ eksctl utils associate-iam-oidc-provider \
     --approve
 ```
 
-## 3. Create Node Group (worker nodes) with additional Add-Ons in Public Subnets
+## 3. Create Node Group (worker nodes) with additional Add-Ons in Private Subnets
 
 ```yml
 eksctl create nodegroup --cluster=EksCluster-Bhavin \
