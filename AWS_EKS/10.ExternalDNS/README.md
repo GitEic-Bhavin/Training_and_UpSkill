@@ -315,6 +315,12 @@ spec:
 
 - Deploy all kube-manifests
 
+- Ensure External-Dns Pods logs is correct
+
+![alt text](extdnspodlog.png)
+
+- If External-Dns Pods is failed , It will issue with Either Your SA of Ext-Dns has not enogh IAM Permission or That SA has configured with Wront IAM Role.
+
 - Ensure Your LB is created
 
 ```bash
@@ -322,6 +328,8 @@ kubectl describe ingress <ingress_name>
 
 # Look for Deployed LB reconsile
 ```
+
+
 
 - Go to your Hosted Zones
 
