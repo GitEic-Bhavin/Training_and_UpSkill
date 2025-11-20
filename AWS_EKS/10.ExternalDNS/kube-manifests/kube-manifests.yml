@@ -1,0 +1,88 @@
+# apiVersion: v1
+# kind: ServiceAccount
+# metadata:
+#   name: external-dns-sa
+#   # If you're using Amazon EKS with IAM Roles for Service Accounts, specify the following annotation.
+#   # Otherwise, you may safely omit it.
+#   annotations:
+#     # Substitute your account ID and IAM service role name below. #Change-1: Replace with your IAM ARN Role for extern-dns
+#     eks.amazonaws.com/role-arn: arn:aws:iam::682033465818:policy/List_and_Update_DNSRecords_EKS_ExternalDNS \
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: external-dns
+  namespace: kube-system
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::682033465818:role/eksctl-EksCluster-Bhavin-addon-iamserviceacco-Role1-5gUCLyEGPeaQ
+
+
+---
+# Create Cluster Role to give access of eks resources by ExternalDNS Service.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: external-dns
+rules:
+- apiGroups: [""]
+  resources: ["services","endpoints","pods"]
+  verbs: ["get","watch","list"]
+- apiGroups: ["extensions","networking.k8s.io"]
+  resources: ["ingresses"]
+  verbs: ["get","watch","list"]
+- apiGroups: [""]
+  resources: ["nodes"]
+  verbs: ["list","watch"]
+
+---
+# Cluster role binding with some permission given to SA.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: external-dns-viewer
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: external-dns
+subjects:
+- kind: ServiceAccount
+  name: external-dns
+  namespace: kube-system
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: external-dns
+  namespace: kube-system
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: external-dns
+  template:
+    metadata:
+      labels:
+        app: external-dns
+      # If you're using kiam or kube2iam, specify the following annotation.
+      # Otherwise, you may safely omit it.  #Change-2: Commented line 55 and 56
+      #annotations:  
+        #iam.amazonaws.com/role: arn:aws:iam::ACCOUNT-ID:role/IAM-SERVICE-ROLE-NAME    
+    spec:
+      serviceAccountName: external-dns
+      containers:
+      - name: external-dns
+        #image: k8s.gcr.io/external-dns/external-dns:v0.10.2
+        image: registry.k8s.io/external-dns/external-dns:v0.20.0
+        args:
+        - --source=service
+        - --source=ingress
+        # Change-3: Commented line 65 and 67 - --domain-filter=external-dns-test.my-org.com # will make ExternalDNS see only the hosted zones matching provided domain, omit to process all available hosted zones
+        - --domain-filter=bhavindevops.shop
+        - --provider=aws
+       # Change-3: Commented line 65 and 67  - --policy=upsert-only # would prevent ExternalDNS from deleting any records, omit to enable full synchronization
+        - --aws-zone-type=public # only look at public hosted zones (valid values are public, private or no value for both)https://chatgpt.com/c/6918cbf0-ad48-8320-8db7-933fa307eb6e
+        - --registry=txt
+        - --txt-owner-id=my-hostedzone-identifier
+      securityContext:
+        fsGroup: 65534 # For ExternalDNS to be able to read Kubernetes and AWS token files
