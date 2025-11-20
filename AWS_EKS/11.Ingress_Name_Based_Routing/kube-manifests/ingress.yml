@@ -47,7 +47,7 @@ metadata:
     alb.ingress.kubernetes.io/unhealthy-threshold-count: '2'
 
     # SSL Redirect Setting for HTTPS
-    alb.ingress.kubernetes.io/ssl-redirect: 443
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
 
     # External DNS - For creating DNS Record itself.
     external-dns.alpha.kubernetes.io/hostname: default101.bhavindevops.shop
@@ -68,7 +68,7 @@ spec:
             path: /app1/
             backend:
               service:
-                name: app1-nginx-nodeport-service
+                name: app-nginx-nodeport-service
                 port: 
                   number: 80
         # Add Path for App2
