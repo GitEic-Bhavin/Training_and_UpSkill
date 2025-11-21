@@ -78,3 +78,37 @@ kubectl apply -R -f kube-manifests
 ```bash
 kubectl get ingress
 ```
+
+![alt text](digc.png)
+
+- If your `external-dns` pod is restarting every minutes.
+- You may have issue with RBAC in Cluster Role.
+
+- Ensure you had given proper pemissions to create, update, delete DNS Records and list DNS service.
+
+```bash
+- apiGroups: [""]
+  resources: ["services","endpoints","pods", "create","patch"]
+  verbs: ["get","watch","list"]
+```
+
+- ALB Controller created Load Balancer Rules.
+
+![alt text](lbrc.png)
+
+
+- Verify DNS Records has been created
+
+- Just Browse your Domains
+
+- Default App
+
+![alt text](dapp.png)
+
+- App1
+
+![alt text](app1.png)
+
+- App2
+
+![alt text](App2.png)

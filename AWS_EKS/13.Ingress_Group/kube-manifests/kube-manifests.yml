@@ -2,16 +2,6 @@
 # kind: ServiceAccount
 # metadata:
 #   name: external-dns
-#   # If you're using Amazon EKS with IAM Roles for Service Accounts, specify the following annotation.
-#   # Otherwise, you may safely omit it.
-#   annotations:
-#     # Substitute your account ID and IAM service role name below. #Change-1: Replace with your IAM ARN Role for extern-dns
-#     eks.amazonaws.com/role-arn: arn:aws:iam::682033465818:role/eksctl-EksCluster-Bhavin-addon-iamserviceacco-Role1-t8Y4GgAh3hS1
-
-# apiVersion: v1
-# kind: ServiceAccount
-# metadata:
-#   name: external-dns
 #   namespace: kube-system
 #   annotations:
 #     # eks.amazonaws.com/role-arn: arn:aws:iam::682033465818:role/eksctl-EksCluster-Bhavin-addon-iamserviceacco-Role1-5gUCLyEGPeaQ
@@ -24,8 +14,9 @@ kind: ClusterRole
 metadata:
   name: external-dns
 rules:
+# To create, update, delete DNS Records
 - apiGroups: [""]
-  resources: ["services","endpoints","pods"]
+  resources: ["services","endpoints","pods", "create","patch"]
   verbs: ["get","watch","list"]
 
 - apiGroups: ["discovery.k8s.io"]
@@ -38,10 +29,6 @@ rules:
 - apiGroups: [""]
   resources: ["nodes"]
   verbs: ["list","watch"]
-# To create, update, delete DNS Records
-- apiGroups: [""]
-  resources: ["events"]
-  verbs: ["create","patch"]
 
 ---
 # Cluster role binding with some permission given to SA.
