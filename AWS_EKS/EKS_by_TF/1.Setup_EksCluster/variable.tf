@@ -66,3 +66,26 @@ variable "default_route_table_tags" {
   
 }
 
+
+# AddOns
+
+variable "pvt_ng_desired" {
+    type = number
+}
+variable "pvt_ng_max" {
+    type = number
+}
+variable "pvt_ng_min" {
+    type = number
+}   
+
+variable "eks_instance_type" {
+  
+}
+
+variable "eks_private_nodegroup_name" {
+  
+}
+variable "vpc_id" {
+  
+}

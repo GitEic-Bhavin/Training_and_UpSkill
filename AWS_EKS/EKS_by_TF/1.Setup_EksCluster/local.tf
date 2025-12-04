@@ -45,4 +45,10 @@ locals {
   vpn_gateway_tags = {
     Name = "${var.eks_cluster_name}-vpn-gateway"
   }
+
+# AddOns
+  eks_private_nodegroup_name = "${var.eks_cluster_name}-private-nodegroup"
+  
 }
+
+

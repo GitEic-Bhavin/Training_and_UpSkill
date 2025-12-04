@@ -38,4 +38,29 @@ module "eks" {
 
     cluster_version = var.cluster_version
 
+    # AddOns and Nodegroup
+    eks_instance_type = var.eks_instance_type
+    pvt_ng_min = var.pvt_ng_min
+    pvt_ng_max = var.pvt_ng_max
+    pvt_ng_desired = var.pvt_ng_desired
+    eks_private_nodegroup_name = local.eks_private_nodegroup_name
+
+  
+
 }
+
+# module "Add-AddOns" {
+#   source = "./modules/Add-AddOns"
+  
+#   eks_instance_type = var.eks_instance_type
+#   pvt_ng_min = var.pvt_ng_min
+#   pvt_ng_max = var.pvt_ng_max
+#   pvt_ng_desired = var.pvt_ng_desired
+  
+#   eks_private_nodegroup_name = local.eks_private_nodegroup_name
+#   eks_cluster_name = var.eks_cluster_name
+
+#   private_subnets = module.vpc.private_subnets
+#   vpc_id = module.vpc.vpc_id
+
+# }
