@@ -1,0 +1,8 @@
+CloudFormation_Basic/*.json
+AWS_EKS/6.ALB_Ingress_P1/IAM_Latest/arn_of_lbcontroller.txt
+AWS_EKS/9.SSL_Ingress/ingress.yml
+
+
+/home/einfochips/Training_and_UpSkill/AWS_EKS/EKS_by_TF/.terraform*
+/home/einfochips/Training_and_UpSkill/AWS_EKS/EKS_by_TF/1.Setup_EksCluster/terraform.tfstate*
+/home/einfochips/Training_and_UpSkill/AWS_EKS/EKS_by_TF/1.Setup_EksCluster/terraform.tfvars
