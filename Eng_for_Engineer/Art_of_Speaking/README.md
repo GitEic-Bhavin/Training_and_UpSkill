@@ -124,3 +124,151 @@ To improve communication and build rapport:
 5. Focus on making the other person comfortable
 
 When rapport is established early, conversations become smoother, easier, and more meaningful.
+
+
+# how **small changes in words** can make your communication much more positive.
+Two main ideas are explained:
+
+# **1. Replace “BUT” with “AND” to sound more positive**
+
+The word **“but”** usually cancels the first part of your sentence and makes it sound negative or limiting.
+
+### **Example 1**
+
+❌ *I'd love to go to Mauritius, **but** I'm scared of flying.*
+→ Sounds like: “Because I’m scared, I can’t go.”
+
+✔ *I'd love to go to Mauritius **and** I'm scared of flying.*
+→ Sounds like: “I want to go AND I have a fear — a problem I can work on.”
+
+This version shows:
+
+* A desire (you want to go)
+* A challenge (fear of flying)
+* But NOT that the fear stops the desire
+
+
+### **Example 2**
+
+❌ *I understand your point, **but** I want to try another strategy.*
+→ Makes the other person feel criticized.
+
+✔ *I understand your point **and** I want to try another strategy.*
+→ Shows you respect their idea and want to build on it.
+
+
+### **Example 3**
+
+❌ *I like your sales model, **but** we can use another strategy for faster growth.*
+→ Feels like you don’t actually like their model.
+
+✔ *I like your sales model **and** we can use another strategy for faster growth.*
+→ Feels collaborative and supportive.
+
+
+# **2. Use the word “YET” to stay positive about things you can’t do (for now)**
+
+Adding **“yet”** at the end of a negative sentence changes the meaning from *hopeless* → *hopeful*.
+
+### **Example 4**
+
+❌ *I haven’t practiced enough to pass the math exam.*
+✔ *I haven’t practiced enough to pass the math exam **yet**.*
+→ Means: I will practice more; I can still improve.
+
+
+### **Example 5**
+
+❌ *I don’t know enough to pass the exam.*
+✔ *I don’t know enough to pass the exam **yet**.*
+→ Encourages learning and growth.
+
+
+### **Example 6**
+
+❌ *I don’t earn enough money to buy a house.*
+✔ *I don’t earn enough money to buy a house **yet**.*
+→ Suggests possibility and hope in the future.
+
+
+# **Overall Message**
+
+* **“But”** often sounds negative and shuts down ideas.
+* **“And”** keeps the conversation open and positive.
+* **“Yet”** turns a negative statement into a hopeful one.
+
+
+
+# **Short & Easy Explanation**
+
+- This passage explains an important communication rule:
+
+### **People love talking about themselves — not about you.**
+
+To be a good communicator, you must:
+
+### ✔ Listen more
+
+### ✔ Talk less about yourself
+
+### ✔ Encourage others to share
+
+If you do this, people will naturally like you and trust you.
+
+
+# **Why this matters**
+
+Most people want:
+
+* Someone who listens
+* Someone who understands
+* Someone who cares
+
+If you provide that, you instantly become someone they enjoy talking to.
+
+
+# **How to do it correctly**
+
+### 1. Encourage others to speak
+
+Use phrases like:
+
+* “Oh, tell me more!”
+* “Wow, that’s interesting!”
+* “Really? What happened next?”
+
+These make people feel valued and open up further.
+
+
+### 2. Don’t hijack the conversation
+
+If someone is telling you their story or problem, **don’t switch to your own story**.
+
+❌ Wrong:
+
+> “I understand you’re stressed… the same happened to me last year when—”
+
+✔ Right:
+
+> “I’m listening… what happened after that?”
+
+Remember:
+**They came to talk about their issue, not yours.**
+
+
+### 3. Resist the urge to talk about yourself
+
+You might WANT to share your own experiences, but doing so shuts the conversation down.
+
+Good communicators control this urge.
+
+
+# **Main Message**
+
+If you want to build strong connections:
+
+👉 Let people talk about themselves
+👉 Be genuinely interested
+👉 Don’t make conversations about you
+
+This instantly makes you a better communicator and a more likable person.
