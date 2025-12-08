@@ -272,3 +272,96 @@ If you want to build strong connections:
 👉 Don’t make conversations about you
 
 This instantly makes you a better communicator and a more likable person.
+
+
+When to use **"I"** and When not to use **"You"**
+---
+
+## **What is “I-Talk”?**
+
+**I-Talk** means expressing your feelings and concerns by starting with **“I”** instead of blaming the other person with **“You”**.
+
+### Why it works:
+
+* No one can argue with your **feelings**.
+* You avoid **blame**, so the other person is less defensive.
+* You focus on the **impact**, not the person’s character.
+* It invites a **calm conversation** instead of a fight.
+
+### Example:
+
+❌ **Accusation (You-talk):**
+“You never do the dishes. This house is always a mess because of you!”
+
+✔️ **I-Talk (Better):**
+“I feel stressed and disappointed when I come home and see that the dishes are undone after you promised to do them.”
+
+This changes the tone completely.
+
+
+## **Why is I-Talk powerful?**
+
+Because:
+
+* People may argue with your *interpretation*
+  (“I didn’t do the dishes because I was busy!”)
+* But they **cannot deny your feelings**
+  (“You can’t feel disappointed!”)
+
+It becomes about **your inner experience**, not their failure.
+
+
+## **What is “We-Talk”?**
+
+“We-Talk” replaces “I” with **“we”** when discussing shared actions, shared memories, or shared responsibilities.
+
+### Why it works:
+
+* Builds a sense of **teamwork**
+* Shows **unity** and removes “me vs. you”
+* Creates emotional closeness
+* Makes the other person feel included and important
+
+### Example:
+
+❌ “I think the meeting starts at 3.”
+(This sounds individual.)
+
+✔️ “We need to be in the conference room by 3, right?”
+(This sounds cooperative—same meaning, but more connected.)
+
+Another:
+
+❌ “I remember the summer of 2012. It was really hot.”
+✔️ “We had a really hot summer in 2012.”
+(Instantly feels like a shared memory.)
+
+
+## **What exactly changes?**
+
+The **words are small**, but the **impact is huge**.
+
+### When you use **You-Talk**:
+
+* The other person feels attacked
+* They defend themselves
+* The conversation becomes a fight
+
+### When you use **I-Talk**:
+
+* The other person understands how you feel
+* They become less defensive
+* They are more open to change
+
+### When you use **We-Talk**:
+
+* You create closeness
+* You build teamwork
+* You encourage cooperation
+
+
+## Simple summary
+
+* **I-Talk** = expressing *your* feelings → calm conversation
+* **We-Talk** = highlighting *togetherness* → collaboration
+* **You-Talk** = blame → arguments & defensiveness. 
