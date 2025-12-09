@@ -876,3 +876,51 @@ use **cue cards** —small cards with short points written on them.
 
 This reduces pressure and prevents verbal fillers.
 
+
+
+Guide you voice
+---
+
+- The best way to improve how you speak is to **listen to your own voice**.
+
+- When we talk to people, we cannot hear ourselves properly.
+So the solution is: **record your voice** and listen to it later.
+
+- When you listen to the recording, you will understand:
+
+* how you actually sound to others
+* what is good
+* what needs improvement
+
+Then you can check:
+
+* Is your voice too high or too low?
+* Is your energy dull or too much?
+* Are you speaking too fast or too slow?
+* Do you sound confident or weak?
+* Is your tone flat (monotonous) or does it have good variation?
+
+- These things help you know what to fix.
+
+- Sometimes, we think something is wrong with our voice, but actually no one else notices it.
+So it’s helpful to ask **other people for feedback** too.
+- They might notice something you missed, or tell you that you are overthinking.
+
+- When you record your voice, don’t read from a book.
+- That sounds fake and unnatural.
+
+- Instead, record a **normal conversation** with friends or colleagues (with their permission).
+- This will show your real style — your pauses, tone, pace, etc.
+
+- Then listen to it and note:
+
+* volume
+* pitch
+* tone
+* energy
+
+- Make small changes slowly.
+- It will not improve in one day, but with practice you will sound better and more confident.
+
+- Every habit takes time to build.
+- But if you keep correcting yourself and practicing, your speaking style will improve and any issues you had will slowly disappear.
