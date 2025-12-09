@@ -26,7 +26,7 @@ Humans do this naturally — it’s instinctive.
 However, stress, workplace pressure, or emotional tension can weaken these natural patterns.
 A little **conscious effort** at the start of a conversation can greatly improve how it goes.
 
----
+
 
 ## **How We Build Rapport**
 
@@ -46,7 +46,6 @@ For example:
 
 Both convey sympathy, but the second one shows **deeper empathy**.
 
----
 
 ### **2. Physical Behavior (Body Language)**
 
@@ -64,7 +63,6 @@ So, to build rapport, show physical signs of being:
 * Relaxed
 * Open
 
----
 
 ### **3. Vocal Behavior (Tone of Voice)**
 
@@ -111,7 +109,6 @@ Example at a networking event:
 This simple comment opens the door to a conversation.
 What happens next depends on how you continue with engaging statements and supportive responses.
 
----
 
 # **In Summary**
 
@@ -590,3 +587,140 @@ When correcting someone:
 ### ✔ Be direct, not hesitant
 
 ### ✔ Talk about actions, not personality
+
+
+
+Understand when no one wants your Advise
+---
+
+- When someone comes to you to share a problem or talk about a situation, remember that they may not be looking for suggestions or advice. Often, they simply want to be heard.
+
+# **1. People may not be seeking advice — they just want to be heard**
+
+**Example:**
+Your friend says, *“Work has been so stressful lately. My manager keeps changing deadlines.”*
+Instead of giving advice immediately like *“You should talk to HR,”*
+you respond:
+**“That sounds difficult. Tell me more—what happened?”**
+They feel heard, not instructed.
+
+
+# **2. Give advice only when asked**
+
+**Example:**
+Your colleague says, *“I don’t know what to do with my project issue.”*
+You ask,
+**“Would you like my suggestion, or do you just want to vent?”**
+If they say, “I just want to vent,” you listen without giving advice.
+
+
+# **3. Unsolicited advice can be annoying**
+
+**Example:**
+A friend shares: *“I am planning to start a diet next week.”*
+You immediately say: *“You should join my diet plan, and stop eating carbs completely.”*
+They didn’t ask for advice and may get irritated or stop sharing with you.
+
+
+# **4. Do not go where you are not wanted**
+
+**Example:**
+Someone is discussing their relationship problems with another friend.
+You jump in with:
+*“You know what you should do? Leave him!”*
+You were not part of the conversation—this feels intrusive and disrespectful.
+
+
+# **5. Timing matters in giving advice**
+
+**Example:**
+Your teammate made a mistake in a meeting.
+You could correct them publicly, but instead, you wait until you both are alone and say,
+**“Hey, small thing—next time we present, maybe we can double-check that data together.”**
+Your timing protects their confidence.
+
+
+# **6. Give feedback privately when needed**
+
+**Example:**
+A coworker mispronounces a word during a presentation.
+Do **not** correct them in front of 20 people.
+Tell them later, privately:
+**“Just for future presentations, that word is pronounced like this.”**
+
+
+# **7. Be gentle when giving advice**
+
+**Example:**
+Friend: *“I’m thinking of changing my job.”*
+Bad response: *“You’re always confused. You never stick to anything.”*
+Gentle response:
+**“If changing the job makes you happier, maybe it’s worth exploring. What are you thinking?”**
+
+
+# **8. Do not make fun of things important to others**
+
+**Example:**
+Someone is excited about a small award they received.
+You say: *“That’s nothing. Anyone can get that.”*
+They feel hurt.
+Proper behavior: Acknowledge their happiness.
+
+
+# **9. Do not belittle or undermine feelings**
+
+**Example:**
+Friend: *“I’m feeling overwhelmed lately.”*
+Wrong: *“Come on, it’s not a big deal. You’re overreacting.”*
+Right:
+**“I’m sorry you’re feeling this way. Want to talk about what’s overwhelming you?”**
+
+
+# **10. Be clear and concise when speaking**
+
+**Example:**
+Instead of rambling:
+*“So, like, yesterday I was thinking maybe, possibly if you can, you know…”*
+Say clearly:
+**“Can we submit the report by 4 PM?”**
+
+
+# **11. Don’t speak without knowing the full facts**
+
+**Example:**
+You hear someone say, *“Varun missed the deadline again.”*
+Without checking, you say,
+*“He’s always careless!”*
+Later you learn his mother was hospitalized.
+Better approach:
+**Ask first:** “What happened? Is everything okay?”
+
+
+# **12. Don’t pass judgments quickly**
+
+**Example:**
+You see a coworker quiet and assume they are rude.
+Later you learn they are dealing with personal issues.
+Instead of judging, you could have asked:
+**“You seem a bit quiet today—hope everything is okay?”**
+
+
+# **13. Show interest in the conversation**
+
+**Example:**
+When someone is telling you something important,
+keep your phone aside
+maintain eye contact
+and respond with small acknowledgments like **“I see,” “Okay,” “I understand.”**
+
+
+# **14. Never talk with your mouth full**
+
+**Example:**
+During lunch, a friend asks: *“How was your weekend?”*
+If you answer with food in your mouth, it looks rude.
+Better:
+Finish chewing → swallow → then respond.
+
+
+If you want, I can also create a **single combined version**, a **short summary**, or a **presentation-style format**.
