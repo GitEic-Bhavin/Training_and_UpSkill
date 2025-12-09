@@ -724,3 +724,155 @@ Finish chewing → swallow → then respond.
 
 
 If you want, I can also create a **single combined version**, a **short summary**, or a **presentation-style format**.
+
+
+
+UnImpressive Verbal Fillers
+---
+
+# **1. Verbal fillers make your communication weak**
+
+Words like **“um,” “uh,” “like,” “you know,” “basically,” “actually,” “so yeah…”**
+are called **verbal fillers**.
+
+Using them **occasionally** is fine.
+But using them **repeatedly** makes you sound unsure, nervous, or unprepared.
+
+### **Real Example:**
+
+❌ *“So… um… I want to like… talk about… you know… our project updates.”*
+This sounds unsure and unprofessional.
+
+✔️ *“I want to talk about our project updates.”*
+Clear and confident.
+
+
+# **2. Check your own speaking habits**
+
+Record yourself while speaking.
+Then listen and count how many fillers you use.
+
+### **Real Example:**
+
+You listen to a 2-minute audio and notice
+you said “um” **9 times** and “like” **5 times**.
+That means you rely too much on fillers.
+
+
+# **3. The best way to reduce fillers: Clarity of thought**
+
+Fillers appear when your brain is confused or searching for the next word.
+If you know what you want to say, you won’t need fillers.
+
+### **Real Example:**
+
+Before speaking → think:
+**“What is my point?”**
+
+Once your thought becomes clear, your speech becomes clear.
+
+
+# **4. Use shorter sentences**
+
+Short sentences = fewer fillers + easy to understand.
+
+### **Bad Example (Long and complicated):**
+
+“Hello everyone, I’m here to talk about the role of technology, which of course we are surrounded with in education, paving way for some great career opportunities that our students can explore.”
+
+This is long, heavy, and confusing.
+
+### **Good Example (Short & clear):**
+
+“Hello, everyone.
+I’m here to talk about the role of technology in education.
+We are surrounded by it.
+It is creating great career opportunities for our students.”
+
+Much clearer.
+Much easier to listen to.
+
+
+# **5. Use simple words unless technical terms are needed**
+
+Simple words help people understand faster.
+
+### **Real Example:**
+
+Instead of: *“Utilize”*
+Say: *“Use.”*
+
+Instead of: *“Commence”*
+Say: *“Start.”*
+
+Instead of long sentences you can’t say in one breath, keep them short and clean.
+
+
+# **6. A practical exercise to stop using fillers**
+
+Write words like **“um,” “like,” “you know”** on a piece of paper
+and stick it on your wall, door, or work desk—somewhere you see every day.
+
+Whenever you speak and accidentally use one of those words,
+your mind will recall the paper and remind you to avoid it.
+
+This helps break the habit.
+
+
+# **7. Fillers appear due to lack of clarity or discomfort**
+
+When thoughts are messy, fillers pop out.
+
+### **Real Example:**
+
+You are presenting and forget your next point.
+You start saying:
+*“Ummm… so… I think… um…”*
+
+Instead, you can pause.
+
+
+# **8. Pausing is better than fillers**
+
+A pause is powerful.
+It sounds confident and gives your brain time to think.
+
+### **Example:**
+
+Instead of:
+*“Um… next point is…”*
+Say:
+*“… Next point is…”*
+
+Just a short silence.
+No panic.
+No fillers.
+
+
+# **9. Do not force fancy vocabulary**
+
+If big words don’t come naturally, don’t force them.
+It will break your flow and increase fillers.
+
+### **Bad Example:**
+
+“I want to, um, elucidate the… um… primary objective…”
+
+### **Good Example:**
+
+“I want to explain the main objective.”
+
+Simple and smooth.
+
+
+# **10. Verbal tics appear when trying to recall something**
+
+When memory is slow, fillers appear.
+
+### **Practical Solution:**
+
+If you are speaking to many people…
+use **cue cards** —small cards with short points written on them.
+
+This reduces pressure and prevents verbal fillers.
+
