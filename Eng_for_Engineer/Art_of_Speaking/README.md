@@ -1073,3 +1073,133 @@ The author’s version:
 Same meaning → stuck between two difficult choices
 But it sounds new and grabs attention.
 
+
+Tell, tell and tell again!
+---
+
+# **The Three Key Rules of Public Speaking**
+
+> “Tell your audience what you are going to tell them.
+> Tell them.
+> Tell them what you told them.”
+
+This is the **classic structure for effective presentations**.
+
+
+# **1. Beginning – Tell them what you are going to tell them**
+
+* At the **start of your talk**, clearly outline the points you will cover.
+* This helps the audience know **what to expect**.
+* Avoid starting your talk blindly; don’t make the audience figure out the purpose themselves — they might lose interest immediately.
+
+**Example (animal welfare internship):**
+
+> “I want to explain how my internship at the veterinary clinic will help me on the job. I will give you three examples of how I expect to use what I learned.”
+
+- Audience now knows:
+
+* Purpose of the talk
+* Number of points to expect
+* Why they should pay attention
+
+
+# **2. Middle – Tell them**
+
+* This is the **body of your talk**, where you expand on the points you promised.
+* Mention your summary sentences as you cover each point, to **reinforce the key ideas**.
+
+**Example:**
+
+> “I learned how to dress an injured animal, which would allow me to handle emergency situations if the vet is unavailable.”
+
+* Here, you are **explaining and connecting your experience to your purpose**.
+* Reinforcing the summary sentences keeps your audience focused.
+
+
+# **3. End – Tell them what you told them**
+
+* At the **conclusion**, summarize the main points again in a slightly different way.
+* This ensures the audience leaves with the **purpose of your talk clearly in mind**.
+
+**Example:**
+
+> “As you can see, the internship was extremely helpful. The three examples I’ve discussed show how I intend to make use of the internship for my career growth.”
+
+* Rephrasing the summary cements the message.
+* The audience now **remembers the key takeaway**.
+
+
+# **Why this works**
+
+* Keeps the audience engaged
+* Makes your talk structured and easy to follow
+* Ensures your purpose is clear
+* Reinforces your main message multiple times without being boring
+
+
+# **Simple Formula**
+
+1. **Intro:** “Here’s what I’m going to tell you”
+2. **Body:** “Here’s what I learned / Here’s what I want to share”
+3. **Conclusion:** “So here’s what I told you / Here’s why it matters”
+
+**Example**
+
+Sure! Let’s **explain the “Tell them what you are going to tell them → Tell them → Tell them what you told them” structure** using a real example: **“Why private school is better than government school.”**
+
+# **1. Beginning – Tell them what you are going to tell them**
+
+At the start, clearly outline the points your talk will cover so your audience knows what to expect.
+
+**Example introduction:**
+
+> “Today, I want to explain why private schools can offer better education than government schools. I will give you three reasons: smaller class sizes, better infrastructure, and more extracurricular opportunities.”
+
+✅ Audience now knows:
+
+* The topic: Why private schools are better
+* The number of points: 3 reasons
+* Why they should listen
+
+
+# **2. Middle – Tell them**
+
+Now, expand on each point clearly, reinforcing the key idea.
+
+**Example body:**
+
+1. **Smaller class sizes:**
+
+> “Private schools usually have fewer students per classroom. This allows teachers to give more individual attention, helping students understand concepts better.”
+
+2. **Better infrastructure:**
+
+> “Private schools often have modern labs, libraries, and digital classrooms. This makes learning more engaging and effective compared to overcrowded government schools.”
+
+3. **Extracurricular opportunities:**
+
+> “Private schools provide sports, music, and clubs that help develop a child’s talents and confidence, giving them a well-rounded education.”
+
+Here, you are **explaining your points and connecting them to your main topic**. Repeating your summary phrases keeps the audience focused.
+
+
+# **3. End – Tell them what you told them**
+
+Summarize the main points in slightly different words to leave a lasting impression.
+
+**Example conclusion:**
+
+> “So, as you can see, private schools provide smaller class sizes, better infrastructure, and more extracurricular activities. These factors together make private schools a more effective environment for learning and overall development compared to government schools.”
+
+✅ Now the audience clearly remembers:
+
+* Your topic
+* The main points
+* The takeaway message
+
+
+# **Summary of the Structure With This Example**
+
+1. **Intro:** “Here’s what I’m going to tell you” → 3 reasons why private schools are better
+2. **Body:** “Here’s what I found” → Explain each reason with examples
+3. **Conclusion:** “Here’s what I told you” → Reiterate the 3 reasons.
