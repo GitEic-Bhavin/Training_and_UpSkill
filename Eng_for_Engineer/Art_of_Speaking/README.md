@@ -1012,3 +1012,64 @@ Finish your talk by telling the audience:
 * What they should do immediately after the talk
 
 A strong ending is as important as a strong opening.
+
+
+
+Clishes are Boring
+---
+
+👉 When you use very common, predictable, overused lines, people lose interest because they’ve heard them many times before.
+
+
+# **1. Using a cliché makes you sound less original**
+
+If you say:
+
+> “The grass is always greener on the other side.”
+
+People think:
+
+> “Oh, same old line.”
+
+But if you create your own version, it sounds fresh.
+
+Example given in the text:
+
+> “The oranges always seem juicier on the other side of the orchard.”
+
+Same meaning → but more creative, more original.
+
+
+# **2. Avoid clichés to improve your vocabulary**
+
+When you avoid clichés:
+
+* You automatically start searching for better, new words
+* Your brain becomes more creative
+* You appear more intelligent
+* Your speech sounds unique and memorable
+
+This makes your audience feel you are an **original thinker**, not someone repeating old lines.
+
+# **3. The exercise (2 parts)**
+
+### **Part 1: Catch clichés**
+
+* Notice when you are about to use a cliché
+* Stop yourself
+* Think of a fresh phrase instead
+* Also notice clichés others use, but **don’t point them out**
+
+### **Part 2: Create your own versions**
+
+Try making your own twist on common clichés.
+
+Example:
+“Between the devil and the deep blue sea” →
+The author’s version:
+
+> “Between hunger and thirst.”
+
+Same meaning → stuck between two difficult choices
+But it sounds new and grabs attention.
+
