@@ -924,3 +924,91 @@ So it’s helpful to ask **other people for feedback** too.
 
 - Every habit takes time to build.
 - But if you keep correcting yourself and practicing, your speaking style will improve and any issues you had will slowly disappear.
+
+Grab the Attentions
+---
+
+
+## **What this passage is teaching you**
+
+It explains **how to start and structure a talk or presentation** so that you capture your audience’s attention and keep them engaged from beginning to end.
+
+
+## **Breakdown in simple words**
+
+### **1. Your opening line is everything**
+
+The first sentence decides whether people will listen or get bored.
+Your opening should **hook** the audience.
+
+Good ways to start:
+
+* A short emotional story
+* A shocking or surprising statistic
+* A new fact
+* A quote
+* A rhetorical question
+
+**Why?** Because it creates curiosity and makes people pay attention immediately.
+
+
+### **2. Tell the topic clearly at the beginning**
+
+Right after the hook, clearly say what your talk is about.
+
+If people don’t know what the talk is about within the first few seconds, you lose their interest.
+
+Example:
+“Last seven years have been the warmest on record.”
+→ Hook (shocking fact)
+
+Then:
+“I’m here to talk about the dramatic changes in our climate and what we must do to stop them.”
+→ Clear topic
+
+### **3. Have a logical flow**
+
+Once the audience understands the topic, structure your talk clearly.
+
+### **4. Establish the need**
+
+Explain:
+
+* Why the current situation is a problem
+* Why it needs to change
+* What will happen if no action is taken
+* How the problem affects the audience personally
+
+Use 1–2 powerful statistics if relevant.
+
+### **5. Present the solution**
+
+Now that the audience understands the problem, explain:
+
+* What can be done
+* What options or steps exist
+* What exactly you want them to do
+
+This gives direction and purpose.
+
+### **6. Paint the future**
+
+Show two contrasting pictures:
+
+**A. If they don’t act:**
+What negative consequences will occur?
+
+**B. If they do act:**
+How life will get better, easier, safer, or more successful?
+
+Use emotional but factual language.
+If you have slides, use very simple images or diagrams.
+
+### **7. End with clear action**
+
+Finish your talk by telling the audience:
+
+* The exact next steps
+* What they should do immediately after the talk
+
+A strong ending is as important as a strong opening.
