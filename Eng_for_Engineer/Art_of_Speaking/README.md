@@ -1203,3 +1203,67 @@ Summarize the main points in slightly different words to leave a lasting impress
 1. **Intro:** “Here’s what I’m going to tell you” → 3 reasons why private schools are better
 2. **Body:** “Here’s what I found” → Explain each reason with examples
 3. **Conclusion:** “Here’s what I told you” → Reiterate the 3 reasons.
+
+Speak with your Eyes
+---
+
+
+# **Why Eye Contact is Important**
+
+* In **everyday conversation**, we naturally look at the person we are talking to.
+* In **public speaking**, this is even more important because it **keeps your audience engaged**.
+* If you stare at the wall, ceiling, or a blank space, your speech loses energy and connection.
+
+**Key idea:** Eye contact makes your audience **feel included and involved** in your talk.
+
+
+# **How to Start With Eye Contact**
+
+1. **Find someone familiar:**
+
+   * If you know someone in the audience, start by talking to them.
+   * This eases nervousness and makes the speech feel less intimidating.
+
+2. **If you don’t know anyone:**
+
+   * Pretend you are talking to a friend one-on-one.
+   * This turns a public speech into a personal conversation, which is easier to handle.
+
+3. **Hold your gaze:**
+
+   * Lock eyes with one person for **10–15 seconds** (roughly one complete thought).
+   * Don’t just glance and move on — the audience feels more connected when you focus on them for a moment.
+
+
+# **Practical Example (Using the Veterinary Clinic Speech)**
+
+* Thought 1:
+
+> “I interned at the veterinary clinic for a month, and the experience was enriching.”
+> **Lock eyes with one person for this thought.**
+
+* Thought 2:
+
+> “I learned valuable skills that I can use in my future job.”
+> **Switch to another person and maintain eye contact for this thought.**
+
+❌ What **not to do**: Rapidly switch eyes multiple times in a single sentence.
+
+* It **reduces impact** and makes your speech seem disconnected.
+
+
+# **Tips to Reduce Nervousness**
+
+* Take a deep breath before starting.
+* Relax — you don’t have to be overly serious.
+* Some suggest imagining the audience in funny ways (like wearing underwear) to ease nerves — but this is optional.
+* Confidence in your **preparation and content** is usually enough.
+
+
+# **Key Takeaways**
+
+1. Eye contact = engagement + connection.
+2. Start with someone familiar or pretend one-on-one conversation.
+3. Hold gaze for 10–15 seconds per thought.
+4. Avoid rapid shifting of eyes — it loses impact.
+5. Relax and breathe; confidence in content helps more than gimmicks.
