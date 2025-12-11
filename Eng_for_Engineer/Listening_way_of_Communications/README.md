@@ -227,3 +227,107 @@ After the call, reflect on:
 * How successful you were.
 
 This helps you become aware of your habits and improve them.
+
+Basic Tenents of Communications
+---
+
+## **1. Rights in Communication**
+
+When you talk to someone, you naturally have some basic rights:
+
+### ✔ **Right to Respect**
+
+You deserve to be spoken to politely and treated with dignity.
+
+### ✔ **Right to Have Opinions**
+
+You are allowed to think differently and express your views calmly.
+
+### ✔ **Right to Ask for What You Need**
+
+If you need clarity, time, space, or information, you can request it.
+
+### ✔ **Right to Set Limits**
+
+You decide:
+
+* how much information you want to share
+* how much personal space or emotional space you allow
+* how far the other person can go in the conversation
+
+These rights ensure that you feel safe, respected, and understood.
+
+
+## **2. Responsibilities in Communication**
+
+Just as you have rights, you also have responsibilities toward the other person:
+
+### ✔ **Treat Others with Respect**
+
+You must show the same respect that you expect from them.
+
+### ✔ **Listen to Their Opinions**
+
+Even if you disagree, you must listen without interrupting.
+
+### ✔ **Understand Their Needs**
+
+Communication only works if both sides feel heard and valued.
+
+### ✔ **Respect Their Boundaries**
+
+Just like you set limits, the other person has limits too—and you must honor them.
+
+
+## **3. The Meaning of “Communication”**
+
+The word comes from the Latin *communis*, meaning **common** or **shared**.
+
+This means:
+
+* Communication is about finding **common meaning**, not just talking.
+* It is a process of **shared understanding** between people.
+
+So when communicating, you should ask:
+
+* *What effect am I having?*
+* *How is the other person interpreting my words, tone, and gestures?*
+
+
+## **4. Communication Is More Than Words (Non-Verbal Communication)**
+
+Communication includes:
+
+* **Facial expressions**
+* **Eye contact**
+* **Body posture**
+* **Hand movements**
+* **Tone of voice**
+* **How close or far you stand from someone**
+
+Some signals are intentional (like nodding), but many are unintentional (like looking bored).
+
+Non-verbal communication can completely change the meaning of your words.
+
+For example:
+
+* If you look around while someone is talking, it signals disrespect—even if your words are polite.
+
+
+## **5. Why Non-Verbal Respect Matters**
+
+If your body language shows:
+
+* disinterest
+* disrespect
+* impatience
+
+then communication fails—even if you don’t say anything rude.
+
+This breaks the process of **common understanding**, and the conversation becomes useless.
+
+Proper communication requires:
+
+* attentive body language
+* respectful gestures
+* showing that you’re listening
