@@ -161,3 +161,69 @@ Better:
 5. **Don’t assume you understand their emotions.**
 6. **Don’t impose your values.**
 7. **Respect their pace, feelings, and boundaries.**
+
+
+
+Interrunptions are Game Spoiler
+---
+
+### ✔ Why interrupting is bad
+
+* It irritates people.
+* It makes them feel disrespected and undervalued.
+* It shows that you think your thoughts are more important than theirs.
+* It damages relationships and prevents meaningful conversations.
+* People may start avoiding you because they feel you don’t care to understand them.
+
+### ✔ Why we interrupt
+
+* It happens naturally.
+* We get impatient.
+* In heated discussions, we want to quickly share our opinions or arguments.
+
+### ✔ Why you must stop interrupting
+
+Even if your opinion is great, the other person won’t listen if you cut them off.
+Interrupting breaks the flow of conversation and destroys trust.
+
+
+# 🎯 **How to change this habit**
+
+### **1. Bite your tongue (literally or mentally)**
+
+When you feel the urge to interrupt:
+
+* Pause.
+* Hold yourself back.
+* Let the other person complete their thoughts.
+
+This trains your mind to stay calm and patient.
+
+### **2. Make a mental note**
+
+If you want to say something important:
+
+* Don’t jump in immediately.
+* Note it in your mind.
+* Wait until the speaker finishes, then speak gently.
+
+### **3. Practice active listening**
+
+Listening is a skill that improves with practice, not just understanding.
+
+
+# **Exercise / Challenge**
+
+Call a friend or relative today and practice:
+
+* Listening carefully.
+* Allowing them to finish.
+* Not interrupting.
+
+After the call, reflect on:
+
+* How many times you interrupted.
+* How many times you controlled yourself.
+* How successful you were.
+
+This helps you become aware of your habits and improve them.
