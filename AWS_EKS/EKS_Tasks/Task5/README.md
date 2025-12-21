@@ -200,7 +200,7 @@ kubectl exec -n team-a curl-a --   curl -s http://app1-nginx-svc
 kubectl exec -n team-b curl-b --   curl -m 5 http://app1-nginx-svc.team-a.svc.cluster.local
 ```
 
-![alt text](ta-acess-tb.png)
+![alt text](ta-access-tb.png)
 
 **It Shouldn't access to NameSpace `team-b` resurces** - Applies RBAC
 **It Shouldn't access Pod of `team-a` to `team-b` Pods** - Applies NetworkPolicy
