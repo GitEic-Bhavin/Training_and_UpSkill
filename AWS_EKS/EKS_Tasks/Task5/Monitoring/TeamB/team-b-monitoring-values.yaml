@@ -1,0 +1,31 @@
+grafana:
+  enabled: true
+  adminPassword: teamB@123
+  defaultDashboardsEnabled: false
+
+  rbac:
+    create: true
+    namespaced: true
+
+  sidecar:
+    dashboards:
+      enabled: true
+      searchNamespace: team-b
+
+prometheus:
+  enabled: true
+
+  prometheusSpec:
+    serviceMonitorSelector:
+      matchLabels:
+        team: team-b
+    serviceMonitorNamespaceSelector:
+      matchNames:
+        - team-b
+
+    podMonitorSelector:
+      matchLabels:
+        team: team-b
+    podMonitorNamespaceSelector:
+      matchNames:
+        - team-b

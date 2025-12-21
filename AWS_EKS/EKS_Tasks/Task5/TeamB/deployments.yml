@@ -1,0 +1,43 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: app3-nginx-deployment
+#   namespace: team-b
+#   labels:
+#     app: app3-nginx
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: app3-nginx
+#   template:
+#     metadata:
+#       labels:
+#         app: app3-nginx
+#     spec:
+#       containers:
+#         - name: app3-nginx-c
+#           image: stacksimplify/kube-nginxapp1:1.0.0
+#           ports:
+#             - containerPort: 80
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app3-nginx-deployment
+  namespace: team-b
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app3-nginx
+  template:
+    metadata:
+      labels:
+        app: app3-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: stacksimplify/kube-nginxapp1:1.0.0
+        ports:
+        - containerPort: 80

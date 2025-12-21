@@ -1,0 +1,32 @@
+# team-a-role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: team-b
+  name: team-b-role
+rules:
+
+- apiGroups: [""]
+  resources: ["pods/exec", "pods", "services"]
+  verbs: ["get", "list", "create", "delete"]
+
+- apiGroups: ["apps"]
+  resources: ["deployments"]
+  verbs: ["get", "list", "create", "delete"]
+
+
+---
+
+# team-a-binding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: team-b-binding
+  namespace: team-b
+subjects:
+- kind: Group
+  name: team-b-group
+roleRef:
+  kind: Role
+  name: team-b-role
+  apiGroup: rbac.authorization.k8s.io
