@@ -1,0 +1,22 @@
+# You must create an ENIConfig for each Availability Zone. 
+# This tells the CNI which subnet to use for Pod IPs.
+apiVersion: crd.k8s.amazonaws.com/v1alpha1
+kind: ENIConfig
+metadata:
+  name: private-subnet-2
+spec:
+  subnet: subnet-04318ab9fcd62ed6e # apne3-az1 (ap-northeast-3b)
+  securityGroups:
+    - sg-0db9851f587ebf110
+
+---
+
+apiVersion: crd.k8s.amazonaws.com/v1alpha1
+kind: ENIConfig
+metadata:
+  name: private-subnet-1
+spec:
+  subnet: subnet-0242f57948edfe958 # apne3-az2 (ap-northeast-3a)
+  securityGroups:
+    - sg-0db9851f587ebf110
+

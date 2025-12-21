@@ -1,0 +1,35 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: EksCluster-Bhavin
+  region: ap-northeast-3
+
+vpc:
+  id: "vpc-07fcf4c8d2932927e" 
+  subnets:
+    public:
+      apne3-az1: { id: "subnet-049071179e9ae48c0" }
+      apne3-az3: { id: "subnet-00204b5d3b6344ba0" }
+    private:
+      apne3-az1: { id: "subnet-0bd1acfdecaaaf526" }
+      apne3-az3: { id: "subnet-072c448c7c5697dee" }
+
+managedNodeGroups:
+  - name: nodegroup-private
+    instanceType: t3.medium
+    minSize: 2
+    maxSize: 3
+    desiredCapacity: 2
+    volumeSize: 20
+    privateNetworking: true
+    ssh: 
+      allow: true
+      publicKeyName: task1 # Matches your --ssh-public-key
+    iam:
+      withAddonPolicies:
+        imageBuilder: true   # THIS gives you --full-ecr-access (PowerUser)
+        autoScaler: true     # THIS gives you --asg-access
+        externalDNS: true    # Matches --external-dns-access
+        albIngress: true     # Matches --alb-ingress-access
+        appMesh: true        # Matches --appmesh-access
