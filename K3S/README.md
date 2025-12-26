@@ -151,3 +151,89 @@ sudo cat /var/lib/rancher/k3s/server/token
 ```
 
 ![alt text](jw.png)
+
+
+
+## Storage (Longhorn)
+
+What is Longhorn?
+---
+
+
+- Longhorn is an open-source, distributed block storage system for Kubernetes.
+- It lets your Kubernetes clusters have persistent storage that is:
+
+- highly available (data is replicated across nodes)
+
+- easy to manage
+
+- cloud-agnostic (works on-prem, bare metal, or any cloud)
+
+- Think of it as a way to make sure:
+
+“If a node dies, the data for your pods is still safe and available.”
+
+### How Longhorn Works (simple)
+
+- 1. You deploy Longhorn into your Kubernetes cluster.
+
+- 2. It creates a storage layer across all worker nodes.
+
+- 3. When a PVC (Persistent Volume Claim) is created, Longhorn:
+
+- 4. stores data in volumes
+
+- 5. replicates data across multiple nodes
+
+- 6. `If one node goes down — Longhorn automatically heals and keeps data available.`
+
+
+
+
+
+## 🔹 What k3s Gives You by Default
+
+k3s ships with a built-in provisioner:
+
+### ✅ **`local-path-provisioner` (Default StorageClass)**
+
+When you create a PersistentVolumeClaim (PVC):
+
+* The volume is stored **on the node’s local disk**
+* No extra setup is required
+* Great for testing and dev clusters
+
+**Pros**
+
+✔️ Works fine for labs / dev
+✔️ Very simple
+✔️ Zero configuration
+
+**Limitations**
+
+❌ **Not replicated**
+❌ If the node dies → **data is lost**
+❌ Pods cannot automatically move to another node with their data
+
+> **Example:** The PVC is created on `node-1`.
+> If `node-1` goes down, the pod + data are unavailable.
+
+---
+
+## 🔹 What Longhorn Adds (and Why People Use It)
+
+**Longhorn is a distributed storage system built for Kubernetes.**
+
+It turns multiple nodes into a **fault-tolerant storage cluster**.
+
+**Benefits**
+
+✔️ Replication across nodes
+✔️ Automatic failover
+✔️ Snapshots & backups
+✔️ Simple web UI
+✔️ Works on bare-metal, VMs, clouds — anywhere
+
+> If **node-1 fails**, Longhorn continues serving the volume from **node-2 or node-3**.
+
+That’s why Longhorn is popular in **HA (Highly Available) clusters** — like yours.
