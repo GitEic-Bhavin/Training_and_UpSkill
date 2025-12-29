@@ -111,4 +111,4 @@ kubectl get ingress
 
 - App2
 
-![alt text](App2.png)
+![alt text](app2.png)
