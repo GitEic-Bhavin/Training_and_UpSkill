@@ -14,7 +14,9 @@ metadata:
   name: external-dns
   namespace: kube-system
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::682033465818:role/eksctl-EksCluster-Bhavin-addon-iamserviceacco-Role1-5gUCLyEGPeaQ
+    # eks.amazonaws.com/role-arn: arn:aws:iam::682033465818:role/eksctl-EksCluster-Bhavin-addon-iamserviceacco-Role1-5gUCLyEGPeaQ
+    eks.amazonaws.com/role-arn: arn:aws:iam::682033465818:role/eksctl-EksCluster-Bhavin-addon-iamserviceacco-Role1-ka6wcaZq2vcS
+
 
 
 ---
