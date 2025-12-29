@@ -9,3 +9,8 @@ AWS_EKS/EKS_by_TF/1.Setup_EksCluster/.terraform*
 /home/einfochips/Training_and_UpSkill/AWS_EKS/EKS_by_TF/.terraform*
 /home/einfochips/Training_and_UpSkill/AWS_EKS/EKS_by_TF/1.Setup_EksCluster/terraform.tfstate*
 /home/einfochips/Training_and_UpSkill/AWS_EKS/EKS_by_TF/1.Setup_EksCluster/terraform.tfvars
+
+/home/einfochips/Training_and_UpSkill/AWS_EKS/EKS_Tasks/Task1/terraform/.terraform.lock*
+/home/einfochips/Training_and_UpSkill/AWS_EKS/EKS_Tasks/Task1/terraform/terraform.tfstat*
+/home/einfochips/Training_and_UpSkill/AWS_EKS/EKS_Tasks/Task1/terraform/.terraform/
+/home/einfochips/Training_and_UpSkill/AWS_EKS/EKS_Tasks/Task1/terraform/.terraform/

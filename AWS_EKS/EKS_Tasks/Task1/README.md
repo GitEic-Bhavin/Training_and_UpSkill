@@ -1,5 +1,28 @@
 Create a Highly Available Web App Using ALB + EC2 Auto Scaling with architect diagram and explanation.
 ---
+```bash
+                Users / Browser
+                        |
+                        v
+            Application Load Balancer (ALB)
+                Listener : 80 (HTTP)
+                        |
+        +-----------------------------+
+        |                             |
+Path Rule: /app1/*            Path Rule: /app2/*
+        |                             |
+Target Group - App1           Target Group - App2
+        |                             |
+ASG - App1                    ASG - App2
+(Min 1 / Max 3)               (Min 1 / Max 3)
+        |                             |
+EC2 Instances (AZ-A, AZ-B)     EC2 Instances (AZ-A, AZ-B)
+Apache/Nginx                  Apache/Nginx
+```
+
+
+
+
 
 - Set up VPC with Pvt and Pub Route tabel
 - Attach NAT and IGW
