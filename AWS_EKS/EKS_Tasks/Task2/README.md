@@ -1,6 +1,8 @@
 Build a Serverless App Using API Gateway + Lambda + DynamoDB
 ---
 
+![alt text](<task2arch.png>)
+
 ## 1. Create a DynamoDB table (e.g., Products).
 
 ![alt text](dydb.png)
