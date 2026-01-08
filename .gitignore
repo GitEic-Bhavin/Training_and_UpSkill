@@ -16,3 +16,9 @@ AWS_EKS/EKS_by_TF/1.Setup_EksCluster/.terraform*
 /home/einfochips/Training_and_UpSkill/AWS_EKS/EKS_Tasks/Task1/terraform/.terraform
 /home/einfochips/Training_and_UpSkill/AWS_EKS/EKS_Tasks/Task1_and_Task3/terraform/terraform-stack
 .terraform/
+/home/einfochips/Training_and_UpSkill/ArgoCD_AKS/ArgoCD_Setup/gitops-aks-argocd-terraform-repo/.terraform*
+/home/einfochips/Training_and_UpSkill/ArgoCD_AKS/ArgoCD_Setup/gitops-aks-argocd-terraform-repo/terraform.tfstate*
+/home/einfochips/Training_and_UpSkill/ArgoCD_AKS/Setup_AKS/gitops-aks-terraform-infra-repo/.terraform*
+/home/einfochips/Training_and_UpSkill/ArgoCD_AKS/Setup_AKS/gitops-aks-terraform-infra-repo/terraform.tfstate*
+/home/einfochips/Training_and_UpSkill/ArgoCD_AKS/SonarQube/gitops-aws-ec2-terraform-repo/.terraform*
+/home/einfochips/Training_and_UpSkill/ArgoCD_AKS/SonarQube/gitops-aws-ec2-terraform-repo/terraform.tfstate*
