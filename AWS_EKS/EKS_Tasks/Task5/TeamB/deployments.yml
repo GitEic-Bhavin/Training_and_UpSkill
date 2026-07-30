@@ -27,7 +27,7 @@ metadata:
   name: app3-nginx-deployment
   namespace: team-b
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: app3-nginx

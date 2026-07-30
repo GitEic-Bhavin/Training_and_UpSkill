@@ -29,5 +29,6 @@ spec:
     app: app3-nginx
   type: ClusterIP
   ports:
-  - port: 80
+  - port: 80  
+    name: http-metrics
     targetPort: 80

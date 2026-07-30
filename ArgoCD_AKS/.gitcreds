@@ -1,0 +1,3 @@
+SONAR_TOKENS or git_tokens=sqp_481becb7b07e30559f6c90ab80549e968cc9f00e
+gitopsdevsecopspipeline
+SONAR_HOST_URL=http://3.108.221.125:9000/

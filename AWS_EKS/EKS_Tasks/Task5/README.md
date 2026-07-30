@@ -216,15 +216,75 @@ kubectl exec -n team-b curl-b --   curl -m 5 http://app1-nginx-svc.team-a.svc.cl
 ## 6. Setup Monitoring
 
 - We will setup monitoring by Prometheus and Grafana.
-- Prometheus and Grafana will be installed for each NameSpace.
+- Prometheus and Grafana will be installed in `monitoring` namespace to monitor all ns.
 
-- Before install premetheus you will have to **labled** to your each `namespace`.
+### 6.1 Create namespace
 
 ```bash
-# for team-a give label name monitoring=team-a
-kubectl label namespace team-a monitoring=team-a
-
-# for team-b give label name monitoring=team-b
-kubectl label namespace team-b monitoring=team-b
+kubectl create ns monitoring
 ```
+
+### 6.2 Add helm repo
+
+```bash
+helm repo add prometheus-community prometheus-community.github.io
+helm repo update
+```
+
+### 6.3 Add prometheus-stack by helm
+
+```bash
+helm install prom-stack prometheus-community/kube-prometheus-stack \
+  --namespace monitoring \
+  --create-namespace \
+  --set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues=false \
+  --set prometheus.prometheusSpec.podMonitorSelectorNilUsesHelmValues=false \
+  --set prometheus.prometheusSpec.ruleSelectorNilUsesHelmValues=false
+```
+
+- After installing the operator, you or your teams (team-a, team-b) can define ServiceMonitor or PodMonitor resources in their respective namespaces, and the central 
+Prometheus instance will automatically discover and scrape the metrics.
+
+
+### 6.4 Create Service Monitor in each namespces
+
+```yml
+# For team-a ns
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: team-a-app-monitor
+  namespace: team-a  # The team's namespace
+  labels:
+    release: prom-stack # Optional, but helps with organization
+spec:
+  selector:
+    matchLabels:
+      app: app1-nginx-svc # Must match the label on your team-a Service
+  endpoints:
+  - port: http-metrics # Must match the 'name' of the port in your team-a Service
+    interval: 30s
+```
+
+- Same you will have to create for team-b ns.
+
+![alt text](svcm.png)
+
+### 6.5 Expose on local by port-forwarding
+
+- Prometheus
+
+```bash
+kubectl port-forward svc/prom-stack-kube-prometheus-prometheus 9090:9090 -n monitoring
+```
+
+![alt text](prometheus.png)
+
+- Grafana
+
+```bash
+kubectl port-forward svc/prom-stack-grafana 3000:80 -n monitoring
+```
+
+![alt text](grafanas.png)
 

@@ -712,3 +712,16 @@ EFS
 - EFS is only for LINUX.
 
 ![alt text](efs.png)
+
+
+- Use cases: Content Mng, Web sering, Data sharing, Wordpress
+
+- Uses `NFSv4.1 Protocol`.\
+
+- Uses Security Group to control access to EFS.
+
+- Compatible with Linux based AMI.
+
+- Encryption at rest using KMS.
+
+- File system scales automatically, pay-per-use, No capacity scaling plannig.

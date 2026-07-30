@@ -1,0 +1,15 @@
+Conditional Statements
+
+if , elif, else
+
+if age >= 18: # here, you have to write ":" to state your conditions.
+
+if - To define conditions which is TRUE
+else: - To define conditions which is FALSE
+else: - If not any of conditions TRUE then this else conditions will execute.
+
+elif: To check all conditions one by one and execute.
+
+
+
+

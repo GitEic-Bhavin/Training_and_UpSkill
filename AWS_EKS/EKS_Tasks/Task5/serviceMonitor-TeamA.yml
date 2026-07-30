@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: team-a-app-monitor
+  namespace: team-a  # The team's namespace
+  labels:
+    release: prom-stack # Optional, but helps with organization
+spec:
+  selector:
+    matchLabels:
+      app: app1-nginx-svc # Must match the label on your team-a Service
+  endpoints:
+  - port: http-metrics # Must match the 'name' of the port in your team-a Service
+    interval: 30s
+
